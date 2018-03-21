@@ -15,6 +15,7 @@ import { UserCreateComponent } from './Users/user-create/user-create.component';
 import { UserEditComponent } from './Users/user-edit/user-edit.component';
 
 import { UserService } from './Services/user.service';
+import { HomeComponent } from './Support/home/home.component';
 
 
 
@@ -28,7 +29,8 @@ import { UserService } from './Services/user.service';
     UserListComponent,
     UserDetailComponent,
     UserCreateComponent,
-    UserEditComponent
+    UserEditComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
