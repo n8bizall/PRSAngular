@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClietModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
+//import { UserComponent } from './Users/user.component';
 import { AboutComponent } from './Support/about/about.component';
 
 import { UserListComponent } from './Users/user-list/user-list.component';
@@ -24,7 +24,7 @@ import { HomeComponent } from './Support/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
+    // UserComponent,
     AboutComponent,
     UserListComponent,
     UserDetailComponent,
@@ -35,7 +35,7 @@ import { HomeComponent } from './Support/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClietModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [UserService],
