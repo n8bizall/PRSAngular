@@ -13,7 +13,8 @@ export class MenuComponent implements OnInit {
   menuItems: Menu[] = [
     new Menu('Home', '/home', 'The home page'),
     new Menu('About', '/about', 'The About page'),
-    new Menu('Users', '/users/list', 'The user list display')
+    new Menu('Users', '/users/list', 'The user list display'),
+    new Menu('Vendors', '/vendors/list', 'The vendor list display')
   ];
 
   constructor() { }

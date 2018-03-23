@@ -24,7 +24,7 @@ create(): void {
   this.UserSvc.Create(this.user)
   .subscribe(res => {
     console.log(res);
-    this.router.navigateByUrl('/users/create');
+    this.router.navigateByUrl('/users/list');
 });
 }
 

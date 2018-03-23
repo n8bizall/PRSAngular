@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 import { UserService } from '../../Services/user.service';
 import { User } from '../../Models/user';
@@ -16,8 +17,18 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private UserSvc: UserService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
+
+  remove(): void {
+  this.UserSvc.Remove(this.user)
+  .subscribe(res => {
+    console.log(res);
+    this.router.navigateByUrl('/users/list');
+  });
+
+  }
 
   getUserById(id) {
 this.UserSvc.Get(id)

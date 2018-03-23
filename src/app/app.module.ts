@@ -19,6 +19,12 @@ import { HomeComponent } from './Support/home/home.component';
 import { MenuComponent } from './Support/menu/menu.component';
 import { MenuItemComponent } from './Support/menu/menu-item.component';
 
+import { VendorCreateComponent } from './vendors/vendor-create/vendor-create.component';
+import { VendorDetailComponent } from './vendors/vendor-detail/vendor-detail.component';
+import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
+import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
+import { VendorService } from './services/vendor.service';
+
 
 
 
@@ -33,7 +39,11 @@ import { MenuItemComponent } from './Support/menu/menu-item.component';
     UserEditComponent,
     HomeComponent,
     MenuComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    VendorCreateComponent,
+    VendorDetailComponent,
+    VendorEditComponent,
+    VendorListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +51,7 @@ import { MenuItemComponent } from './Support/menu/menu-item.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, VendorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,7 +19,7 @@ export class UserEditComponent implements OnInit {
   constructor(
     private UserSvc: UserService,
     private route: ActivatedRoute,
-    private router: Router,
+    private router: Router
   ) { }
 
 change(): void {
