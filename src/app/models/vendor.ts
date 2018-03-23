@@ -24,8 +24,7 @@ export class Vendor {
       IsPreApproved: boolean,
       Active: boolean,
       UpdateByUser: number
-)
-{
+) {
          this.Id = Id;
      this.Code = Code;
      this.Name = Name;
