@@ -9,13 +9,17 @@ import { User } from '../../Models/user';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  pagetitle = 'User List';
+  users: User[];
 
   constructor(private UserSvc: UserService) { }
 
   ngOnInit() {
     this.UserSvc.List()
-    .subscribe(users => 
-      {console.log(users);});
+    .subscribe(users => {
+      console.log(users);
+      this.users = users;   /*get the data and store in property of the componenet*/
+      });
   }
 
 }

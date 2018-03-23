@@ -1,3 +1,18 @@
-<p>
-  user-detail works!
-</p>
+<div id ='component'>
+  <div id ='pagetitle'>
+    <span>{{pagetitle}}</span>
+  </div>
+  <div id='content'>
+<table class= 'table table-sm' *ngIf='user'>
+    <tr><th>UserName</th><td>{{user.UserName}}</td></tr>
+    <tr> <th>Password</th><td>{{user.Password}}</td></tr>
+    <tr><th>Name</th><td>{{user.FirstName}} {{user.LastName}}</td></tr>
+    <tr><th>Phone</th><td>{{user.Phone}}</td></tr>
+    <tr><th>Email</th><td>{{user.Email}}</td></tr>
+    <tr><th>IsReviewer</th><td>{{user.IsReviewer}}</td></tr>
+    <tr><th>IsAdmin</th><td>{{user.IsAdmin}}</td></tr>
+    <tr><th>Active</th><td>{{user.Active}}</td></tr>
+</table>
+<button>Edit</button>
+</div>
+</div>

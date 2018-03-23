@@ -6,8 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 import { AppComponent } from './app.component';
-//import { UserComponent } from './Users/user.component';
 import { AboutComponent } from './Support/about/about.component';
+
 
 import { UserListComponent } from './Users/user-list/user-list.component';
 import { UserDetailComponent } from './Users/user-detail/user-detail.component';
@@ -16,6 +16,8 @@ import { UserEditComponent } from './Users/user-edit/user-edit.component';
 
 import { UserService } from './Services/user.service';
 import { HomeComponent } from './Support/home/home.component';
+import { MenuComponent } from './Support/menu/menu.component';
+import { MenuItemComponent } from './Support/menu/menu-item.component';
 
 
 
@@ -24,13 +26,14 @@ import { HomeComponent } from './Support/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    // UserComponent,
     AboutComponent,
     UserListComponent,
     UserDetailComponent,
     UserCreateComponent,
     UserEditComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,
