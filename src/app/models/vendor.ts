@@ -10,7 +10,9 @@ export class Vendor {
     Email: string;
     IsPreApproved: boolean;
     Active: boolean;
-    UpdatedByUser: number;
+    DateCreated: string;
+    DateUpdated: string;
+    UpdatedByUser: string;
     constructor (
       Id: number,
       Code: string,
@@ -23,6 +25,8 @@ export class Vendor {
       Email: string,
       IsPreApproved: boolean,
       Active: boolean,
+      DateCreated: string,
+      DateUpdated: string,
       UpdateByUser: string
 ) {
          this.Id = Id;
@@ -36,6 +40,8 @@ export class Vendor {
      this.Email = Email;
      this.IsPreApproved = IsPreApproved;
      this.Active = Active;
+     this.DateCreated = DateCreated;
+     this.DateUpdated = DateUpdated;
      this.UpdatedByUser = UpdateByUser;
 }
 }

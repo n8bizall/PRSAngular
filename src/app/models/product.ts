@@ -1,5 +1,5 @@
 import { Vendor } from './vendor';
-export class Product{
+export class Product {
     Id: number;
     VendorId: string;
     PartNumber: string;

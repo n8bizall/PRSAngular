@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { User } from '../models/user';
 
-const url = 'http://localhost:61566/users/';
+const url = 'http://localhost:61566/Users/';
 
 @Injectable()
 export class UserService {
