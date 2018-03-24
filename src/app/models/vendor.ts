@@ -23,7 +23,7 @@ export class Vendor {
       Email: string,
       IsPreApproved: boolean,
       Active: boolean,
-      UpdateByUser: number
+      UpdateByUser: string
 ) {
          this.Id = Id;
      this.Code = Code;

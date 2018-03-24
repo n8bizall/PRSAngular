@@ -24,6 +24,10 @@ import { VendorDetailComponent } from './vendors/vendor-detail/vendor-detail.com
 import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
 import { VendorService } from './services/vendor.service';
+import { ProductCreateComponent } from './products/product-create/product-create.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
 
 
 
@@ -43,7 +47,11 @@ import { VendorService } from './services/vendor.service';
     VendorCreateComponent,
     VendorDetailComponent,
     VendorEditComponent,
-    VendorListComponent
+    VendorListComponent,
+    ProductCreateComponent,
+    ProductDetailComponent,
+    ProductEditComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

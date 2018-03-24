@@ -23,8 +23,8 @@ export class VendorEditComponent implements OnInit {
   ) { }
 
 change(): void {
-  this.vendor.DateCreated = "2018-03-23";
-  console.log("Vendor before change:", this.vendor);
+  this.vendor.DateCreated = '2018-03-23';
+  console.log('Vendor before change:', this.vendor);
   this.VendorSvc.Change(this.vendor)
   .subscribe(res => {
     console.log(res);
