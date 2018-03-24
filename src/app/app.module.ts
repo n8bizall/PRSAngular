@@ -9,12 +9,13 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './Support/about/about.component';
 
 
-import { UserListComponent } from './Users/user-list/user-list.component';
-import { UserDetailComponent } from './Users/user-detail/user-detail.component';
-import { UserCreateComponent } from './Users/user-create/user-create.component';
-import { UserEditComponent } from './Users/user-edit/user-edit.component';
 
-import { UserService } from './Services/user.service';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { UserDetailComponent } from './users/user-detail/user-detail.component';
+import { UserCreateComponent } from './users/user-create/user-create.component';
+import { UserEditComponent } from './users/user-edit/user-edit.component';
+
+import { UserService } from './services/user.service';
 import { HomeComponent } from './Support/home/home.component';
 import { MenuComponent } from './Support/menu/menu.component';
 import { MenuItemComponent } from './Support/menu/menu-item.component';
@@ -24,10 +25,13 @@ import { VendorDetailComponent } from './vendors/vendor-detail/vendor-detail.com
 import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
 import { VendorService } from './services/vendor.service';
+
 import { ProductCreateComponent } from './products/product-create/product-create.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductEditComponent } from './products/product-edit/product-edit.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
+import { ProductService } from './services/product.service';
+
 
 
 
