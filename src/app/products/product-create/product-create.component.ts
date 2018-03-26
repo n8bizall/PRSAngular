@@ -17,13 +17,18 @@ export class ProductCreateComponent implements OnInit {
 
   pagetitle: string = 'Product Create';
   product: Product = new Product (0, '', '', '', '', '', '', true, '', '', '');
+  vendors: Vendor[];
 
   constructor(
-    private UserSvc: UserService,
     private ProductSvc: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private VendorSvc: VendorService
   ) { }
+
+  compareFn(v1: number, v2: number): boolean {
+    return v1 === v2;
+  }
 
   create(): void {
     this.ProductSvc.Create(this.product)
@@ -33,6 +38,11 @@ export class ProductCreateComponent implements OnInit {
   });
 }
  ngOnInit() {
+   this.VendorSvc.List()
+   .subscribe(vendors => {
+     this.vendors = vendors;
+     console.log('Vendors', this.vendors);
+   });
   }
 
 }

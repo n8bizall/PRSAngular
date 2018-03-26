@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HttpClient} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -31,6 +31,12 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
 import { ProductEditComponent } from './products/product-edit/product-edit.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductService } from './services/product.service';
+import { PurchaserequestCreateComponent } from './purchaserequests/purchaserequest-create/purchaserequest-create.component';
+import { PurchaserequestEditComponent } from './purchaserequests/purchaserequest-edit/purchaserequest-edit.component';
+import { PurchaserequestDetailComponent } from './purchaserequests/purchaserequest-detail/purchaserequest-detail.component';
+import { PurchaserequestListComponent } from './purchaserequests/purchaserequest-list/purchaserequest-list.component';
+import { PurchaseRequestService } from './services/purchaserequest.service';
+import { PurchaseRequestLineItemService } from './services/purchaserequestlineitem.service';
 
 
 
@@ -55,7 +61,11 @@ import { ProductService } from './services/product.service';
     ProductCreateComponent,
     ProductDetailComponent,
     ProductEditComponent,
-    ProductListComponent
+    ProductListComponent,
+    PurchaserequestCreateComponent,
+    PurchaserequestEditComponent,
+    PurchaserequestDetailComponent,
+    PurchaserequestListComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +73,7 @@ import { ProductService } from './services/product.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService, VendorService],
+  providers: [UserService, VendorService, ProductService, PurchaseRequestService, PurchaseRequestLineItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

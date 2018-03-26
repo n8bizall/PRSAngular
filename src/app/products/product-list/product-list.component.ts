@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
+import { Vendor } from '../../models/vendor';
+import { VendorService } from '../../services/vendor.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+
 
 
 
@@ -13,6 +18,7 @@ import { ProductService } from '../../services/product.service';
 export class ProductListComponent implements OnInit {
   pagetitle = 'Product List';
   products: Product[];
+  vendor: Vendor;
   constructor(private ProductSvc: ProductService) { }
 
   ngOnInit() {

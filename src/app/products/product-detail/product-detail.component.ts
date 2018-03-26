@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
+import { Vendor } from '../../models/vendor';
+import { VendorService } from '../../services/vendor.service';
 
 
 
@@ -12,11 +14,13 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
+
   pagetitle: string = 'Product Detail';
   product: Product;
 
   constructor(
     private ProdcutSvc: ProductService,
+    private VendorSvc: VendorService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
