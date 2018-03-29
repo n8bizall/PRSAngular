@@ -13,7 +13,7 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./prli-edit.component.css']
 })
 export class PrliEditComponent implements OnInit {
-pagetitle: string = 'Purchase Request Line Items Update';
+pagetitle = 'Purchase Request Line Items Update';
 products: Product[];
 prli: PurchaseRequestLineItem;
 purchaserequestId: number;
@@ -34,7 +34,7 @@ purchaserequestId: number;
     this.PurchaseRequestLineItemSvc.Change(this.prli)
     .subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('purchaserequestlineitems/list/' + this.purchaserequestId);
+      this.router.navigateByUrl('purchaserequests/list');
   });
   }
 
@@ -58,7 +58,7 @@ purchaserequestId: number;
         this.route.params
         .subscribe(parms => {
           this.purchaserequestId = parms['rid'];
-         let id = parms['id'];
+         const id = parms['id'];
          this.getPRLIById(id);
       });
   }}

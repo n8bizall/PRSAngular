@@ -42,7 +42,7 @@ export class PrliDetailComponent implements OnInit {
     ngOnInit() {
       this.route.params
       .subscribe(parms => {
-      this.purchaserequestId = parms['prid'];
+      this.purchaserequestId = parms['  rid'];
        let id = parms['id'];
        this.getPRLIById(id);
     });

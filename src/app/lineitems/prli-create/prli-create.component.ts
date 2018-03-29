@@ -19,10 +19,12 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class PrliCreateComponent implements OnInit {
 
-  pagetitle: string = 'Line Item Create';
+  pagetitle = 'Line Item Create';
   prli: PurchaseRequestLineItem = new PurchaseRequestLineItem ('0', '0', '0', true, '', '', '0', '8');
   products: Product[];
   purchaserequests: PurchaseRequest[];
+  purchaserequestId: number;
+
   constructor(
     private ProductSvc: ProductService,
     private route: ActivatedRoute,
@@ -31,12 +33,15 @@ export class PrliCreateComponent implements OnInit {
     private PurchaseRequestLineItemSvc: PurchaseRequestLineItemService
   ) { }
 
+  compareFn(v1: number, v2: number): boolean {
+    return v1 === v2;
+  }
 
   create(): void {
     this.PurchaseRequestLineItemSvc.Create(this.prli)
     .subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('/purchaserequestlineitems/list');
+      this.router.navigateByUrl('/purchaserequests/list/' + this.purchaserequestId);
   });
 }
  ngOnInit() {
@@ -44,6 +49,12 @@ export class PrliCreateComponent implements OnInit {
    .subscribe(products => {
      this.products = products;
      console.log('Products', this.products);
+
+     this.route.params
+     .subscribe(parms => {
+       this.purchaserequestId = parms['prid'];
+       console.log('prid:', this.purchaserequestId);
+     });
 
   this.PurchaseRequestSvc.List()
   .subscribe(purchaserequests => {

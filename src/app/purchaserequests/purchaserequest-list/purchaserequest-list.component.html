@@ -1,6 +1,6 @@
 <div id ='component'>
     <div id ='pagetitle'>
-      <span>{{pagetitle}}</span>  |  <a routerLink='/purchaserequests/create'>Create New</a>
+      <span>{{pagetitle}}</span>  |  <a routerLink='/purchaserequests/create/' >Create New</a>
     </div>
     <div id='content'>
       <table class='table table-sm'>
@@ -28,7 +28,7 @@
       <td>
         <a routerLink='/purchaserequests/detail/{{purchaserequest.Id}}'>Detail</a> |
         <a routerLink='/purchaserequests/edit/{{purchaserequest.Id}}'>Edit</a>  |
-        <a routerLink='/purchaserequestlineitems/list/{{purchaserequest.Id}}'>Lines</a>
+        <a routerLink='/purchaserequests/editlines/{{purchaserequest.Id}}'>Lines</a>
       </td>
     </tr>
         </tbody>

@@ -8,7 +8,7 @@
       <tr> <th>Product</th><td>{{prli.Product.Name}}</td></tr>
       <tr><th>Quantity</th><td>{{prli.Quantity}}</td></tr>
   </table>
-  <a routerLink='/purchaserequestlineitems/edit/{{purchaserequest.Id}}/{{prli.Id}}' class='btn btn-warning'>Edit</a> 
+  <a routerLink='/purchaserequestlineitems/edit/{{purchaserequestId}}/{{prli.Id}}' class='btn btn-warning'>Edit</a> 
   <button (click)='remove()' class='btn btn-danger'>Delete</button>
   </div>
   </div>

@@ -15,9 +15,10 @@ import { PurchaseRequestService } from '../../services/purchaserequest.service';
 })
 export class PurchaserequestCreateComponent implements OnInit {
 
-  pagetitle: string = 'Purchase Request Create';
+  pagetitle = 'Purchase Request Create';
   purchasrequest: PurchaseRequest = new PurchaseRequest ('', '', '', '', '', '', '', true, '', '', '', '');
   users: User[];
+  purchaserequestId: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -43,5 +44,11 @@ export class PurchaserequestCreateComponent implements OnInit {
      this.users = users;
      console.log('Users', this.users);
    });
+   this.route.params
+   .subscribe(parms => {
+     this.purchaserequestId = parms['prid'];
+     console.log('prid:', this.purchaserequestId);
+   });
+
   }
 }

@@ -5,11 +5,6 @@ import { PurchaseRequest } from '../../models/purchaserequest';
 import { PurchaseRequestService } from '../../services/purchaserequest.service';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
-import { VendorDetailComponent } from '../../vendors/vendor-detail/vendor-detail.component';
-import { Product } from '../../models/product';
-import { ProductService } from '../../services/product.service';
-
-
 
 
 @Component({
@@ -19,14 +14,14 @@ import { ProductService } from '../../services/product.service';
 })
 export class PurchaserequestEditComponent implements OnInit {
 
-  pagetitle: string = 'Purchase Request Update';
+  pagetitle = 'Purchase Request Line Item Update';
   purchaserequest: PurchaseRequest;
+  users: User[];
 
 
   constructor(
-    private ProductSvc: ProductService,
-    private UserSvc: UserService,
     private PurchaseRequestSvc: PurchaseRequestService,
+    private UserSvc: UserService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -40,7 +35,7 @@ change(): void {
   this.PurchaseRequestSvc.Change(this.purchaserequest)
   .subscribe(res => {
     console.log(res);
-    this.router.navigateByUrl('/purchaserequests/list');
+    this.router.navigateByUrl('/purchaserequests/list/');
 });
 }
 
@@ -48,14 +43,21 @@ getPurchaseRequestById(id) {
   this.PurchaseRequestSvc.Get(id)
   .subscribe(purchaserequest => {
     this.purchaserequest = purchaserequest;
-    console.log('Purchase Request:', purchaserequest);
+    console.log('Purchase Request Line Item:', purchaserequest);
   });
     }
 
     ngOnInit() {
+
+      this.UserSvc.List()
+      .subscribe(users => {
+        this.users = users;
+        console.log('Users', users);
+      });
+
       this.route.params
       .subscribe(parms => {
-       let id = parms['id'];
+       const id = parms['id'];
        this.getPurchaseRequestById(id);
     });
 }}

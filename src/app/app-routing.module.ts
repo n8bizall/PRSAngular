@@ -19,14 +19,21 @@ import { ProductEditComponent } from './products/product-edit/product-edit.compo
 import { ProductListComponent } from './products/product-list/product-list.component';
 
 import { PurchaserequestCreateComponent } from './purchaserequests/purchaserequest-create/purchaserequest-create.component';
-import { PurchaserequestEditComponent } from './purchaserequests/purchaserequest-edit/purchaserequest-edit.component';
 import { PurchaserequestDetailComponent } from './purchaserequests/purchaserequest-detail/purchaserequest-detail.component';
 import { PurchaserequestListComponent } from './purchaserequests/purchaserequest-list/purchaserequest-list.component';
+import { PurchaserequestEditComponent } from './purchaserequests/purchaserequest-edit/purchaserequest-edit.component';
+import { PurchaseRequestEditLinesComponent } from './purchaserequests/purchaserequest-editlines/purchaserequest-editlines.component';
+
 
 import { PrliCreateComponent } from './lineitems/prli-create/prli-create.component';
 import { PrliEditComponent } from './lineitems/prli-edit/prli-edit.component';
 import { PrliDetailComponent } from './lineitems/prli-detail/prli-detail.component';
 import { PrliListComponent } from './lineitems/prli-list/prli-list.component';
+
+
+
+
+
 
 
 
@@ -41,21 +48,22 @@ const routes: Routes = [
   {path: 'users/edit/:id', component: UserEditComponent},
   {path: 'vendors/edit/:id', component: VendorEditComponent},
   {path: 'products/edit/:id', component: ProductEditComponent},
-  {path: 'purchaserequests/edit/:id', component: PurchaserequestEditComponent},
   {path: 'purchaserequestlineitems/edit/:rid/:id', component: PrliEditComponent},
+  {path: 'purchaserequests/edit/:rid', component: PurchaserequestEditComponent},
 
   {path: 'users/list', component: UserListComponent},
   {path: 'vendors/list', component: VendorListComponent},
   {path: 'products/list', component: ProductListComponent},
   {path: 'purchaserequests/list', component: PurchaserequestListComponent},
   {path: 'purchaserequestlineitems/list/:id', component: PrliListComponent},
+  {path: 'purchaserequests/editlines/:id', component: PurchaseRequestEditLinesComponent },
 
   {path: 'vendors/create', component: VendorCreateComponent},
   {path: 'users/create', component: UserCreateComponent},
   {path: 'products/create', component: ProductCreateComponent},
   {path: 'purchaserequests/create', component: PurchaserequestCreateComponent},
   {path: 'purchaserequestlineitems/create', component: PrliCreateComponent},
-  
+
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: '**', component: HomeComponent }
