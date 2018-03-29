@@ -1,0 +1,38 @@
+<div id ='component'>
+    <div id ='pagetitle'>
+      <span>{{pagetitle}}</span> 
+    </div>
+    <div id='content' *ngIf='prli'>
+    <div>
+    <div class='form-group row'>
+        <div class='col-sm-6 select-list'>
+                <label class='col-form-label col-sm-2' for='product'>Product:</label>
+                <select [(ngModel)]='prli.UserId' [compareWith]='compareFn' class='form-control' name='Product' id='prli-Product'>
+                <option *ngFor="let product of products" [ngValue]="product.Id" [selected]="product.Id == prli.productId">{{product.Name}}</option>
+                </select>
+             </div></div>
+
+    <div class='form-group row'>
+        <label class='col-form-label col-sm-2' for='quantity'>Quantity:</label>
+        <input [(ngModel)]='prli.Quantity' name='Quantity' type='text' class ='form-control col-sm-6' id='quantity' 
+         aria-describedby='QuantityHelp' placeholder='Quantity'>
+        <small id='QuantityHelp' class='form-text text-muted col-sm-2'>The quantity</small>
+    </div>
+   <div class='form-group row'>
+         <label class='col-form-label col-sm-2' for='active'>Active:</label>
+         <input [(ngModel)]='prli.Active' name='Active' type='checkbox' class ='form-control col-sm-6' id='active' 
+          aria-describedby='ActiveHelp' placeholder='Active'>
+         <small id='ActiveHelp' class='form-text text-muted col-sm-2'>Active</small>
+   </div>
+   <div class='form-group row'>
+        <label class='col-form-label col-sm-2' for='updatedbyuser'>UpdatedByUser:</label>
+        <input [(ngModel)]='prli.UpdatedByUser' name='UpdatedByUser' type='text' class ='form-control col-sm-6' id='updatedbyuser' 
+         aria-describedby='UpdatedByUserHelp' placeholder='UpdatedByUser'>
+        <small id='UpdatedByUserHelp' class='form-text text-muted col-sm-2'>UpdatedByUser</small>
+  </div>
+   <div>
+         <button (click)='create()' class='btn btn-warning'>Create</button>
+   </div>
+   </div>
+   </div>
+  

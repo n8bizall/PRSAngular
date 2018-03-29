@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -38,6 +38,11 @@ import { PurchaserequestListComponent } from './purchaserequests/purchaserequest
 import { PurchaseRequestService } from './services/purchaserequest.service';
 import { PurchaseRequestLineItemService } from './services/purchaserequestlineitem.service';
 
+import { PrliEditComponent } from './lineitems/prli-edit/prli-edit.component';
+import { PrliDetailComponent } from './lineitems/prli-detail/prli-detail.component';
+import { PrliCreateComponent } from './lineitems/prli-create/prli-create.component';
+import { PrliListComponent } from './lineitems/prli-list/prli-list.component';
+
 
 
 
@@ -65,13 +70,17 @@ import { PurchaseRequestLineItemService } from './services/purchaserequestlineit
     PurchaserequestCreateComponent,
     PurchaserequestEditComponent,
     PurchaserequestDetailComponent,
-    PurchaserequestListComponent
+    PurchaserequestListComponent,
+    PrliEditComponent,
+    PrliDetailComponent,
+    PrliCreateComponent,
+    PrliListComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    HttpClientModule
   ],
   providers: [UserService, VendorService, ProductService, PurchaseRequestService, PurchaseRequestLineItemService],
   bootstrap: [AppComponent]

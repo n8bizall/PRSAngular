@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 import { Vendor } from '../../models/vendor';
 import { VendorService } from '../../services/vendor.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 

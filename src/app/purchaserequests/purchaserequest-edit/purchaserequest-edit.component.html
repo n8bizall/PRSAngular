@@ -3,13 +3,12 @@
        <span>{{pagetitle}}</span>
     </div>
     <div id='content' *ngIf='purchaserequest'>
-            <div>
     <div class='form-group row'>
-       <label class='col-form-label col-sm-2' for='user'>User:</label>
-       <select [(ngModel)]='purchaserequest.UserId' [compareWith]='compareFn' class ='form-control col-sm-6' name='User' id='purchaserequest-User'>
-       <option *ngFor='let user of users' [ngValue]='user.Id' [selected]='user.Id == purchaserequest.UserId'> {{purchaserequest.User.FirstName}} {{ purchaserequest.User.LastName}}  </option> 
-       </select>
-    </div></div>
+            <label class='col-form-label col-sm-2' for='user'>User:</label>
+            <input [(ngModel)]='purchaserequest.User.FirstName + purchaserequest.User.LastName' name='User' type='text' class ='form-control col-sm-6' id='user' 
+             aria-describedby='UserHelp' placeholder='User'>
+            <small id='UserHelp' class='form-text text-muted col-sm-2'>The user</small>
+         </div>
     <div class='form-group row'>
        <label class='col-form-label col-sm-2' for='description'>Description:</label>
        <input [(ngModel)]='purchaserequest.Description' name='Description' type='text' class ='form-control col-sm-6' id='description' 
@@ -17,10 +16,10 @@
        <small id='DescriptionHelp' class='form-text text-muted col-sm-2'>The description</small>
     </div>
     <div class='form-group row'>
-       <label class='col-form-label col-sm-2' for='purchaserequestfirstname'>Justification:</label>
-       <input [(ngModel)]='purchaserequest.FirstName' name='FirstName' type='text' class ='form-control col-sm-6' id='purchaserequestfirstname' 
-        aria-describedby='FirstNameHelp' placeholder='First Name'>
-       <small id='FirstNameHelp' class='form-text text-muted col-sm-2'>The first name</small>
+       <label class='col-form-label col-sm-2' for='purchaserequestjustification'>Justification:</label>
+       <input [(ngModel)]='purchaserequest.Justification' name='Justification' type='text' class ='form-control col-sm-6' id='purchaserequestjustification' 
+        aria-describedby='JustificationHelp' placeholder='Justification'>
+       <small id='JustificationHelp' class='form-text text-muted col-sm-2'>The justification</small>
     </div>
     <div class='form-group row'>
        <label class='col-form-label col-sm-2' for='purchaserequestdeliverymode'>DeliveryMode:</label>
@@ -29,12 +28,12 @@
        <small id='DeliveryModeHelp' class='form-text text-muted col-sm-2'>The delivery mode</small>
     </div>    
     <div>
-            <div class='form-group row'>
-               <label class='col-form-label col-sm-2' for='purchaserequeststatus'>Status:</label>
-               <select [(ngModel)]='purchaserequest.Status' [compareWith]='compareFn' class ='form-control col-sm-6' name='Status' id='purchaserequeststatus'>
-               <option *ngFor='let purchaserequest of purchaserequests' [ngValue]='status.Id' [selected]='status.Id == purchaserequest.StausId'> {{purchaserequest.Status}} </option> 
-               </select>
-            </div></div>
+    <div class='form-group row'>
+       <label class='col-form-label col-sm-2' for='purchaserequeststatus'>Status:</label>
+       <input [(ngModel)]='purchaserequest.Status' name='Status' type='text' class ='form-control col-sm-6' id='purchaserequeststatus' 
+        aria-describedby='StatusHelp' placeholder='Status'>
+       <small id='StatusHelp' class='form-text text-muted col-sm-2'>The status</small>
+   </div>         
     <div class='form-group row'>
        <label class='col-form-label col-sm-2' for='purchaserequesttotal'>Total:</label>
        <input [(ngModel)]='purchaserequest.Total' name='Total' type='text' class ='form-control col-sm-6' id='purchaserequesttotal' 

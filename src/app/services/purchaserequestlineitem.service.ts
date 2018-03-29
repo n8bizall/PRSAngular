@@ -7,7 +7,7 @@ import { PurchaseRequest } from '../models/purchaserequest';
 
 
 
-const url = 'http://localhost:61566/purchaserequestlintitems/';
+const url = 'http://localhost:61566/purchaserequestlineitems/';
 
 @Injectable()
 export class PurchaseRequestLineItemService {

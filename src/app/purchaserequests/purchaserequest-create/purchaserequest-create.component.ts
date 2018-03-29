@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { User } from '../../models/user';
+import { UserService } from '../../services/user.service';
+import { PurchaseRequest } from '../../models/purchaserequest';
+import { PurchaseRequestService } from '../../services/purchaserequest.service';
+
+
 
 @Component({
   selector: 'app-purchaserequest-create',
@@ -7,9 +15,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PurchaserequestCreateComponent implements OnInit {
 
-  constructor() { }
+  pagetitle: string = 'Purchase Request Create';
+  purchasrequest: PurchaseRequest = new PurchaseRequest ('', '', '', '', '', '', '', true, '', '', '', '');
+  users: User[];
 
-  ngOnInit() {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private UserSvc: UserService,
+    private PurchaseRequestSvc: PurchaseRequestService
+  ) { }
+
+  compareFn(v1: number, v2: number): boolean {
+    return v1 === v2;
   }
 
+  create(): void {
+    this.PurchaseRequestSvc.Create(this.purchasrequest)
+    .subscribe(res => {
+      console.log(res);
+      this.router.navigateByUrl('/purchasrequests/list');
+  });
+}
+ ngOnInit() {
+   this.UserSvc.List()
+   .subscribe(users => {
+     this.users = users;
+     console.log('Users', this.users);
+   });
+  }
 }

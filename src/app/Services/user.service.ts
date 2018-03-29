@@ -27,3 +27,7 @@ export class UserService {
   constructor( private http: HttpClient) { }
 
 }
+
+// logging():void {
+//  this.UserSvc.Login(this.user.UserName, this.user.Password)
+// }

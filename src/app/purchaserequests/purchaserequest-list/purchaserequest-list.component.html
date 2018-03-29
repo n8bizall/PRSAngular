@@ -8,7 +8,6 @@
           <tr>
             <th>User</th>
             <th>Description</th>
-            <th>Justification</th>
             <th>DeliveryMode</th>
             <th>Status</th>
             <th>Total</th>
@@ -21,7 +20,6 @@
     <tr *ngFor='let purchaserequest of purchaserequests'>
       <td>{{purchaserequest.User.FirstName}} {{purchaserequest.User.LastName}}</td>
       <td>{{purchaserequest.Description}}</td>
-      <td>{{purchaserequest.Justification}}</td>
       <td>{{purchaserequest.DeliveryMode}}</td>
       <td>{{purchaserequest.Status}}</td>
       <td>{{purchaserequest.Total | currency}}</td>
@@ -29,7 +27,8 @@
       <td>{{purchaserequest.ReasonForRejection}}</td>
       <td>
         <a routerLink='/purchaserequests/detail/{{purchaserequest.Id}}'>Detail</a> |
-        <a routerLink='/purchaserequests/edit/{{purchaserequest.Id}}'>Edit</a>  
+        <a routerLink='/purchaserequests/edit/{{purchaserequest.Id}}'>Edit</a>  |
+        <a routerLink='/purchaserequestlineitems/list/{{purchaserequest.Id}}'>Lines</a>
       </td>
     </tr>
         </tbody>

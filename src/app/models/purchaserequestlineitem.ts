@@ -1,6 +1,8 @@
 import { PurchaseRequest } from './purchaserequest';
 import { Product } from './product';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 export class PurchaseRequestLineItem {
     Id: string;
