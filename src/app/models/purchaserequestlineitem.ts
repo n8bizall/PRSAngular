@@ -12,7 +12,7 @@ export class PurchaseRequestLineItem {
     DateCreated: string;
     DateUpdated: string;
     UpdatedByUser: string;
-    PurchaseRequestId: string;
+    PurchaseRequestId: number;
 
     constructor(
         Id: string,
@@ -22,7 +22,7 @@ export class PurchaseRequestLineItem {
         DateCreated: string,
         DateUpdated: string,
         UpdatedByUser: string,
-        PurchaseRequestId: string
+    PurchaseRequestId: number
     ) {
         this.Id = Id;
         this.ProductId = ProductId;

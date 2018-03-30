@@ -23,6 +23,9 @@ import { PurchaserequestDetailComponent } from './purchaserequests/purchasereque
 import { PurchaserequestListComponent } from './purchaserequests/purchaserequest-list/purchaserequest-list.component';
 import { PurchaserequestEditComponent } from './purchaserequests/purchaserequest-edit/purchaserequest-edit.component';
 import { PurchaseRequestEditLinesComponent } from './purchaserequests/purchaserequest-editlines/purchaserequest-editlines.component';
+import { PurchaserequestReviewlistComponent } from './purchaserequests/purchaserequest-reviewlist/purchaserequest-reviewlist.component';
+import { PurchaserequestReviewactionComponent } from './purchaserequests/purchaserequest-reviewaction/purchaserequest-reviewaction.component';
+
 
 
 import { PrliCreateComponent } from './lineitems/prli-create/prli-create.component';
@@ -62,7 +65,11 @@ const routes: Routes = [
   {path: 'users/create', component: UserCreateComponent},
   {path: 'products/create', component: ProductCreateComponent},
   {path: 'purchaserequests/create', component: PurchaserequestCreateComponent},
-  {path: 'purchaserequestlineitems/create', component: PrliCreateComponent},
+  {path: 'purchaserequestlineitems/create/:id', component: PrliCreateComponent},
+
+  {path: 'purchaserequests/reviewlist', component: PurchaserequestReviewlistComponent},
+  {path: 'purchaserequests/reviewaction/:id', component: PurchaserequestReviewactionComponent},
+
 
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},

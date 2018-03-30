@@ -2,15 +2,15 @@
     <div id ='pagetitle'>
        <span>{{pagetitle}}</span>
     </div>
-    <div id='content' *ngIf='purchaserequest'>
+    <div id='content' *ngIf='users'>
     <div>
     <div class='form-group row' >
        <label class='col-form-label col-sm-2' for="purchaserequestuser">User:</label>
        <div class='col-sm-6 select-list'>
        <select [(ngModel)]='purchaserequest.UserId' [compareWith]='compareFn' class='form-control' name='User' id='purchaserequest-User'>
-       <option *ngFor="let user of users" [ngValue]="user.Id" [selected]="user.Id == purchaserequest.UserId">{{user.FirstName}}{{user.LastName}}</option>
+       <option *ngFor="let user of users" [ngValue]="user.Id" [selected]="user.Id == purchaserequest.UserId">{{user.FirstName + user.LastName}}</option>
        </select>
-    </div></div>
+    </div></div></div>
     <div class='form-group row'>
        <label class='col-form-label col-sm-2' for='description'>Description:</label>
        <input [(ngModel)]='purchaserequest.Description' name='Description' type='text' class ='form-control col-sm-6' id='description' 
@@ -29,7 +29,6 @@
         aria-describedby='DeliveryModeHelp' placeholder='DeliveryMode'>
        <small id='DeliveryModeHelp' class='form-text text-muted col-sm-2'>The delivery mode</small>
     </div>    
-    <div>
     <div class='form-group row'>
        <label class='col-form-label col-sm-2' for='purchaserequeststatus'>Status:</label>
        <input [(ngModel)]='purchaserequest.Status' name='Status' type='text' class ='form-control col-sm-6' id='purchaserequeststatus' 

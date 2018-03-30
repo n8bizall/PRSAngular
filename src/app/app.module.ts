@@ -43,6 +43,8 @@ import { PrliDetailComponent } from './lineitems/prli-detail/prli-detail.compone
 import { PrliCreateComponent } from './lineitems/prli-create/prli-create.component';
 import { PrliListComponent } from './lineitems/prli-list/prli-list.component';
 import { PurchaseRequestEditLinesComponent } from './purchaserequests/purchaserequest-editlines/purchaserequest-editlines.component';
+import { PurchaserequestReviewlistComponent } from './purchaserequests/purchaserequest-reviewlist/purchaserequest-reviewlist.component';
+import { PurchaserequestReviewactionComponent } from './purchaserequests/purchaserequest-reviewaction/purchaserequest-reviewaction.component';
 
 
 @NgModule({
@@ -72,7 +74,9 @@ import { PurchaseRequestEditLinesComponent } from './purchaserequests/purchasere
     PrliDetailComponent,
     PrliCreateComponent,
     PrliListComponent,
-    PurchaseRequestEditLinesComponent
+    PurchaseRequestEditLinesComponent,
+    PurchaserequestReviewlistComponent,
+    PurchaserequestReviewactionComponent
   ],
   imports: [
     BrowserModule,

@@ -25,6 +25,10 @@ export class PurchaseRequestService {
   Remove(purchaserequest: PurchaseRequest): Observable<any> {
     return this.http.post(url + 'Remove', purchaserequest) as Observable<any>;
   }
+  ReviewList(purchaserequest: PurchaseRequest): Observable<any> {
+    return this.http.get(url + 'ReviewList') as Observable<any>;
+  }
   constructor( private http: HttpClient) { }
 
 }
+

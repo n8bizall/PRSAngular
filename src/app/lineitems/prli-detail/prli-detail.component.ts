@@ -24,10 +24,11 @@ export class PrliDetailComponent implements OnInit {
   ) { }
 
   remove(): void {
+    console.log(this.prli);
     this.PurchaseRequestLineItemSvc.Remove(this.prli)
     .subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('/purchaserequest/line/' + this.purchaserequestId);
+      this.router.navigateByUrl('/purchaserequests/editlines/' + this.purchaserequestId);
     });
 
     }
@@ -42,7 +43,7 @@ export class PrliDetailComponent implements OnInit {
     ngOnInit() {
       this.route.params
       .subscribe(parms => {
-      this.purchaserequestId = parms['  rid'];
+      this.purchaserequestId = parms['rid'];
        let id = parms['id'];
        this.getPRLIById(id);
     });

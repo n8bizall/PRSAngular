@@ -16,9 +16,10 @@ import { PurchaseRequestService } from '../../services/purchaserequest.service';
 export class PurchaserequestCreateComponent implements OnInit {
 
   pagetitle = 'Purchase Request Create';
-  purchasrequest: PurchaseRequest = new PurchaseRequest ('', '', '', '', '', '', '', true, '', '', '', '');
+  purchaserequest: PurchaseRequest = new PurchaseRequest ( 0, 0, '', '', '', '', '', true, '', '', '', '');
   users: User[];
   purchaserequestId: number;
+  user: User;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,10 +33,11 @@ export class PurchaserequestCreateComponent implements OnInit {
   }
 
   create(): void {
-    this.PurchaseRequestSvc.Create(this.purchasrequest)
+
+    this.PurchaseRequestSvc.Create(this.purchaserequest)
     .subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('/purchasrequests/list');
+      this.router.navigateByUrl('/purchaserequests/list');
   });
 }
  ngOnInit() {
@@ -44,11 +46,7 @@ export class PurchaserequestCreateComponent implements OnInit {
      this.users = users;
      console.log('Users', this.users);
    });
-   this.route.params
-   .subscribe(parms => {
-     this.purchaserequestId = parms['prid'];
-     console.log('prid:', this.purchaserequestId);
-   });
+
 
   }
 }

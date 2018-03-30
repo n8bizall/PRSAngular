@@ -20,10 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
 export class PrliCreateComponent implements OnInit {
 
   pagetitle = 'Line Item Create';
-  prli: PurchaseRequestLineItem = new PurchaseRequestLineItem ('0', '0', '0', true, '', '', '0', '8');
+  prli: PurchaseRequestLineItem = new PurchaseRequestLineItem ('0', '0', '0', true, '', '', '0', 0);
   products: Product[];
   purchaserequests: PurchaseRequest[];
   purchaserequestId: number;
+  purchaserequest: PurchaseRequest;
 
   constructor(
     private ProductSvc: ProductService,
@@ -38,32 +39,36 @@ export class PrliCreateComponent implements OnInit {
   }
 
   create(): void {
+    this.prli.PurchaseRequestId = this.purchaserequestId;
+    console.log(this.prli);
+    this.purchaserequest.Status = 'NEW';
+    this.PurchaseRequestSvc.Change(this.purchaserequest);
     this.PurchaseRequestLineItemSvc.Create(this.prli)
     .subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('/purchaserequests/list/' + this.purchaserequestId);
+      this.router.navigateByUrl('/purchaserequests/editlines/' + this.purchaserequestId);
   });
 }
- ngOnInit() {
-   this.ProductSvc.List()
-   .subscribe(products => {
-     this.products = products;
-     console.log('Products', this.products);
 
-     this.route.params
-     .subscribe(parms => {
-       this.purchaserequestId = parms['prid'];
-       console.log('prid:', this.purchaserequestId);
-     });
 
-  this.PurchaseRequestSvc.List()
-  .subscribe(purchaserequests => {
-    this.purchaserequests = purchaserequests;
-    console.log('PurchaseRequests', this.purchaserequests);
-  }
-
-  );
+getProductsList(): void {
+  this.ProductSvc.List()
+    .subscribe(products => {
+      this.products = products;
+      console.log('Products:', this.products);
    });
-  }
+}
+
+ngOnInit() {
+  this.route.params
+    .subscribe(parm => {
+      this.purchaserequestId = +parm['id'];
+      this.PurchaseRequestSvc.Get('id')
+      .subscribe(purchaserequest => {
+        this.purchaserequest = purchaserequest;
+      });
+      this.getProductsList();
+    });
+}
 
 }

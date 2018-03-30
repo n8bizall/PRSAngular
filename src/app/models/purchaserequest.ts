@@ -1,7 +1,7 @@
 import { User } from './user';
 export class PurchaseRequest {
-    Id: string;
-    UserId: string;
+    Id: number;
+    UserId: number;
     Description: string;
     Justification: string;
     DeliveryMode: string;
@@ -13,8 +13,8 @@ export class PurchaseRequest {
     DateUpdated: string;
     UpdatedByUser: string;
     constructor(
-        Id: string,
-        UserId: string,
+        Id: number,
+        UserId: number,
         Description: string,
         Justification: string,
         DeliveryMode: string,
