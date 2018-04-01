@@ -38,15 +38,18 @@ export class PrliCreateComponent implements OnInit {
     return v1 === v2;
   }
 
+
   create(): void {
     this.prli.PurchaseRequestId = this.purchaserequestId;
     console.log(this.prli);
-    this.purchaserequest.Status = 'NEW';
-    this.PurchaseRequestSvc.Change(this.purchaserequest);
     this.PurchaseRequestLineItemSvc.Create(this.prli)
     .subscribe(res => {
       console.log(res);
+      if (this.purchaserequest.Total <= 50) {
+        this.purchaserequest.Status = 'APPROVED'; } else {this.purchaserequest.Status = 'NEW'; }
+        this.PurchaseRequestSvc.Change(this.purchaserequest);
       this.router.navigateByUrl('/purchaserequests/editlines/' + this.purchaserequestId);
+
   });
 }
 

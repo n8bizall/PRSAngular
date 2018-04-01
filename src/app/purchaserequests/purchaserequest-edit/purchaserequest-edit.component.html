@@ -4,12 +4,6 @@
     </div>
     <div id='content' *ngIf='purchaserequest'>
     <div class='form-group row'>
-            <label class='col-form-label col-sm-2' for='user'>User:</label>
-            <input [(ngModel)]='purchaserequest.User.FirstName + purchaserequest.User.LastName' name='User' type='text' class ='form-control col-sm-6' id='user' 
-             aria-describedby='UserHelp' placeholder='User'>
-            <small id='UserHelp' class='form-text text-muted col-sm-2'>The user</small>
-         </div>
-    <div class='form-group row'>
        <label class='col-form-label col-sm-2' for='description'>Description:</label>
        <input [(ngModel)]='purchaserequest.Description' name='Description' type='text' class ='form-control col-sm-6' id='description' 
         aria-describedby='DescriptionHelp' placeholder='Description'>

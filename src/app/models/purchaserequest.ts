@@ -6,7 +6,7 @@ export class PurchaseRequest {
     Justification: string;
     DeliveryMode: string;
     Status: string;
-    Total: string;
+    Total: number;
     Active: boolean;
     ReasonForRejection: string;
     DateCreated: string;
@@ -19,7 +19,7 @@ export class PurchaseRequest {
         Justification: string,
         DeliveryMode: string,
         Status: string,
-        Total: string,
+        Total: number,
         Active: boolean,
         ReasonForRejection: string,
         DateCreated: string,

@@ -16,7 +16,7 @@ import { PurchaseRequestService } from '../../services/purchaserequest.service';
 export class PurchaserequestCreateComponent implements OnInit {
 
   pagetitle = 'Purchase Request Create';
-  purchaserequest: PurchaseRequest = new PurchaseRequest ( 0, 0, '', '', '', '', '', true, '', '', '', '');
+  purchaserequest: PurchaseRequest = new PurchaseRequest ( 0, 0, '', '', '', 'STAGED', 0, true, '', '', '', '');
   users: User[];
   purchaserequestId: number;
   user: User;
@@ -32,8 +32,8 @@ export class PurchaserequestCreateComponent implements OnInit {
     return v1 === v2;
   }
 
-  create(): void {
 
+  create(): void {
     this.PurchaseRequestSvc.Create(this.purchaserequest)
     .subscribe(res => {
       console.log(res);

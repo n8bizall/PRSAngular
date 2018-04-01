@@ -28,13 +28,7 @@
        <input [(ngModel)]='purchaserequest.DeliveryMode' name='DeliveryMode' type='text' class ='form-control col-sm-6' id='purchaserequestdeliverymode' 
         aria-describedby='DeliveryModeHelp' placeholder='DeliveryMode'>
        <small id='DeliveryModeHelp' class='form-text text-muted col-sm-2'>The delivery mode</small>
-    </div>    
-    <div class='form-group row'>
-       <label class='col-form-label col-sm-2' for='purchaserequeststatus'>Status:</label>
-       <input [(ngModel)]='purchaserequest.Status' name='Status' type='text' class ='form-control col-sm-6' id='purchaserequeststatus' 
-        aria-describedby='StatusHelp' placeholder='Status'>
-       <small id='StatusHelp' class='form-text text-muted col-sm-2'>The status</small>
-   </div>         
+    </div>            
     <div class='form-group row'>
        <label class='col-form-label col-sm-2' for='purchaserequesttotal'>Total:</label>
        <input [(ngModel)]='purchaserequest.Total' name='Total' type='text' class ='form-control col-sm-6' id='purchaserequesttotal' 
@@ -47,12 +41,6 @@
         aria-describedby='ActiveHelp' placeholder='Active'>
        <small id='ActiveHelp' class='form-text text-muted col-sm-2'>Active</small>
     </div>
-    <div class='form-group row'>
-        <label class='col-form-label col-sm-2' for='purchaserequestreasonforrejection'>ReasonForRejection:</label>
-        <input [(ngModel)]='purchaserequest.ReasonForRejection' name='ReasonForRejection' type='text' class ='form-control col-sm-6' id='purchaserequestreasonforrejection' 
-         aria-describedby='ReasonForRejectionHelp' placeholder='ReasonForRejection'>
-        <small id='ReasonForRejectionHelp' class='form-text text-muted col-sm-2'>ReasonForRejection</small>
-     </div>
      <div>
         <button (click)='create()' class='btn btn-warning'>Create</button>
   </div>

@@ -52,7 +52,7 @@ const routes: Routes = [
   {path: 'vendors/edit/:id', component: VendorEditComponent},
   {path: 'products/edit/:id', component: ProductEditComponent},
   {path: 'purchaserequestlineitems/edit/:rid/:id', component: PrliEditComponent},
-  {path: 'purchaserequests/edit/:rid', component: PurchaserequestEditComponent},
+  {path: 'purchaserequests/edit/:id', component: PurchaserequestEditComponent},
 
   {path: 'users/list', component: UserListComponent},
   {path: 'vendors/list', component: VendorListComponent},
