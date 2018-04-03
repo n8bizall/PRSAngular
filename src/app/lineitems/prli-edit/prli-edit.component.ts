@@ -6,6 +6,7 @@ import { PurchaseRequestLineItem } from '../../models/purchaserequestlineitem';
 import { PurchaseRequestLineItemService } from '../../services/purchaserequestlineitem.service';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
+import { PurchaseRequest } from '../../models/purchaserequest';
 
 @Component({
   selector: 'app-prli-edit',
@@ -17,6 +18,7 @@ pagetitle = 'Purchase Request Line Items Update';
 products: Product[];
 prli: PurchaseRequestLineItem;
 purchaserequestId: number;
+purchaserequest: PurchaseRequest;
 
 
 
@@ -31,10 +33,11 @@ purchaserequestId: number;
     return v1 === v2;
   }
   change(): void {
+    console.log(this.prli);
     this.PurchaseRequestLineItemSvc.Change(this.prli)
     .subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('purchaserequests/list');
+      this.router.navigateByUrl('purchaserequests/editlines/' + this.purchaserequestId);
   });
   }
 

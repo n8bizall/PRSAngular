@@ -13,7 +13,7 @@
       <tr><th>Active</th><td>{{purchaserequest.Active ? 'Yes' : ''}}</td></tr>
       <tr><th>ReasonForRejection</th><td>{{purchaserequest.ReasonForRejection}}</td></tr>
   </table>
-  <a routerLink='/purchaserequests/edit/{{purchaserequest.Id}}' class='btn btn-warning'>Edit</a> |
-  <button (click)='remove()' class='btn btn-danger'>Delete</button>
+  <a routerLink='/purchaserequests/edit/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-info">Edit</a> |
+  <button (click)='remove()' class='btn btn-sm btn-outline-danger'>Delete</button>
   </div>
   </div>

@@ -2,14 +2,15 @@
     <div id ='pagetitle'>
       <span>{{pagetitle}}</span>
     </div>
+    <div>
     <div id='content' *ngIf='prli'>
   <table class= 'table table-sm' >
       <tr><th>Id</th><td>{{prli.Id}}</td></tr>
       <tr> <th>Product</th><td>{{prli.Product.Name}}</td></tr>
       <tr><th>Quantity</th><td>{{prli.Quantity}}</td></tr>
   </table>
-  <a routerLink='/purchaserequestlineitems/edit/{{purchaserequestId}}/{{prli.Id}}' class='btn btn-warning'>Edit</a> 
-  <button (click)='remove()' class='btn btn-danger'>Delete</button>
+  <a routerLink='/purchaserequestlineitems/edit/{{purchaserequestId}}/{{prli.Id}}' class="btn btn-sm btn-outline-info">Edit</a> 
+  <button (click)='remove()' class='btn btn-sm btn-outline-danger'>Delete</button>
   </div>
   </div>
-
+</div>  

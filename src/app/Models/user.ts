@@ -34,4 +34,5 @@ export class User {
         this.IsAdmin = IsAdmin;
         this.Active = Active;
     }
+
 }

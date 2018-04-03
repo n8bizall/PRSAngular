@@ -32,7 +32,7 @@
         <input [(ngModel)]='vendor.State' name='State' type='text' class ='form-control col-sm-6' id='vendorstate' 
          aria-describedby='StateHelp' placeholder='State'>
         <small id='StateHelp' class='form-text text-muted col-sm-2'>The vendor state</small>
-   </div>State
+   </div>
    <div class='form-group row'>
         <label class='col-form-label col-sm-2' for='vendorzip'>Zip:</label>
         <input [(ngModel)]='vendor.Zip' name='Zip' type='text' class ='form-control col-sm-6' id='vendorzip' 
@@ -70,7 +70,7 @@
             <small id='UpdatedByUserHelp' class='form-text text-muted col-sm-2'>Updated by user</small>
    </div> 
    <div>
-         <button (click)='create()' class='btn btn-warning'>Create</button>
+         <button (click)='create()' class="btn btn-sm btn-outline-info">Create</button>
    </div>
    </div>
    </div>

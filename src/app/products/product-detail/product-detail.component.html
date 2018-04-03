@@ -12,7 +12,7 @@
       <tr><th>Photo Path</th><td>{{product.PhotoPath}}</td></tr>
       <tr><th>Active</th><td>{{product.Active ? 'Yes' : ''}}</td></tr>
   </table>
-  <a routerLink='/products/edit/{{product.Id}}' class='btn btn-warning'>Edit</a> |
-  <button (click)='remove()' class='btn btn-danger'>Delete</button>
+  <a routerLink='/products/edit/{{product.Id}}' class="btn btn-sm btn-outline-info">Edit</a> |
+  <button (click)='remove()' class="btn btn-sm btn-outline-danger">Delete</button>
   </div>
   </div>

@@ -16,7 +16,7 @@ import { PurchaseRequestService } from '../../services/purchaserequest.service';
 export class PurchaserequestCreateComponent implements OnInit {
 
   pagetitle = 'Purchase Request Create';
-  purchaserequest: PurchaseRequest = new PurchaseRequest ( 0, 0, '', '', '', 'STAGED', 0, true, '', '', '', '');
+  purchaserequest: PurchaseRequest = new PurchaseRequest ( 0, 0, '', '', '', 'NEW', 0, true, '', '', '', '');
   users: User[];
   purchaserequestId: number;
   user: User;
@@ -37,7 +37,8 @@ export class PurchaserequestCreateComponent implements OnInit {
     this.PurchaseRequestSvc.Create(this.purchaserequest)
     .subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('/purchaserequests/list');
+      this.purchaserequest.Id = this.purchaserequestId;
+      this.router.navigateByUrl('/purchaserequests/editlines/' + this.purchaserequestId);
   });
 }
  ngOnInit() {

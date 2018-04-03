@@ -24,6 +24,24 @@ export class PurchaseRequestEditLinesComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+  submit(): void {
+    if (this.purchaserequest.Total <= 50) {
+      this.purchaserequest.Status = 'APPROVED';
+      this.PurchaseRequestSvc.Change(this.purchaserequest)
+      .subscribe(purchaserequest => {
+        console.log(purchaserequest);
+        this.router.navigateByUrl('/purchaserequests/list');
+    }); } else {
+      this.purchaserequest.Status = 'REVIEW';
+      this.PurchaseRequestSvc.Change(this.purchaserequest)
+      .subscribe(purchaserequest => {
+        console.log(purchaserequest);
+        this.router.navigateByUrl('/purchaserequests/list');
+}
+);
+}
+}
+
   getPurchaseRequestById(id) {
     this.PurchaseRequestSvc.Get(id)
       .subscribe(purchaserequest => {
@@ -40,5 +58,4 @@ export class PurchaseRequestEditLinesComponent implements OnInit {
       });
 
   }
-
 }

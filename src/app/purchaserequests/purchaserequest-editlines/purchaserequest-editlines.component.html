@@ -1,7 +1,7 @@
 <div id="component">
     <div id="pagetitle">
       <span>{{ pagetitle }}</span> | 
-      <a *ngIf="purchaserequest" routerLink="/purchaserequestlineitems/create/{{purchaserequest.Id}}">Create New</a>
+      <a *ngIf="purchaserequest" routerLink="/purchaserequestlineitems/create/{{purchaserequest.Id}}">Create New Line Items</a>
     </div>
     <div id="content" *ngIf='purchaserequest'>
       <table class="table table-sm">
@@ -41,10 +41,12 @@
           <td>{{ prli.Product.Price | currency }}</td>
           <td>{{ (prli.Quantity * prli.Product.Price) | currency }}</td>
           <td>
-              <a routerLink="/purchaserequestlineitems/detail/{{this.purchaserequest.Id}}/{{prli.Id}}">Detail</a> |
-              <a routerLink="/purchaserequestlineitems/edit/{{this.purchaserequest.Id}}/{{prli.Id}}">Edit</a>
+              <a class="btn btn-sm btn-outline-info" routerLink="/purchaserequestlineitems/detail/{{this.purchaserequest.Id}}/{{prli.Id}}">Detail</a> |
+              <a class="btn btn-sm btn-outline-info" routerLink="/purchaserequestlineitems/edit/{{this.purchaserequest.Id}}/{{prli.Id}}">Edit</a> 
+            
           </td>
         </tr>
       </table>
     </div>
+    <a (click)='submit()' class="btn btn-block btn-outline-info" >Submit</a>
   </div>

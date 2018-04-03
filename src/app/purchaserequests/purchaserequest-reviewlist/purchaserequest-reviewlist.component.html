@@ -1,8 +1,8 @@
 <div id ='component'>
     <div id ='pagetitle'>
-      <span>{{pagetitle}}</span>  |  <a routerLink='/purchaserequests/create/' >Create New</a>
+      <span>{{pagetitle}}</span> 
     </div>
-    <div id='content' *ngIf='purchaserequests'>
+    <div id='content' *ngIf='purchaserequests' class='listdiv'>
       <table class='table table-sm'>
         <thead>
           <tr>
@@ -24,7 +24,7 @@
       <td>{{purchaserequest.Total | currency}}</td>
       <td>{{purchaserequest.Active}}</td>
       <td>
-        <a routerLink='/purchaserequests/reviewaction/{{purchaserequest.Id}}'>Detail</a> 
+        <a routerLink='/purchaserequests/reviewaction/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-info">Review</a> 
       </td>
     </tr>
         </tbody>

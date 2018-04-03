@@ -24,6 +24,8 @@ export class UserService {
   Remove(user: User): Observable<any> {
     return this.http.post(url + 'Remove', user) as Observable<any>;
   }
+
+
   constructor( private http: HttpClient) { }
 
 }

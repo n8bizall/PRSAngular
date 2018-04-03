@@ -1,11 +1,11 @@
-<div id ='component'>
+<div id ='component' >
 <div id ='pagetitle'>
-  <span>{{pagetitle}}</span>  |  <a routerLink='/users/create'>Create New</a>
+  <span>{{pagetitle}}</span>  |  <a routerLink='/users/create' >Create New</a>
 </div>
-<div id='content'>
-  <table class='table table-sm'>
-    <thead>
-      <tr>
+<div id='content' class='listdiv'>
+  <table class="table table-striped">
+    <thead >
+      <tr >
         <th>Name</th>
         <th>UserName</th>
         <th>Phone</th>
@@ -20,8 +20,8 @@
   <td>{{user.Phone}}</td>
   <td>{{user.Email}}</td>
   <td>
-    <a routerLink='/users/detail/{{user.Id}}'>Detail</a> |
-    <a routerLink='/users/edit/{{user.Id}}'>Edit</a>  
+    <a routerLink='/users/detail/{{user.Id}}' class="btn btn-sm btn-outline-info"><i class="icon-plus"></i><span>Detail</span></a> |
+    <a routerLink='/users/edit/{{user.Id}}' class="btn btn-sm btn-outline-info">Edit</a>  
   </td>
 </tr>
 

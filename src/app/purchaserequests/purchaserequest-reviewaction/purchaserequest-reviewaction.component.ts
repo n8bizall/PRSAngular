@@ -29,9 +29,19 @@ purchaserequest: PurchaseRequest;
     this.PurchaseRequestSvc.Change(this.purchaserequest)
     .subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('/purchaserequests/reviewlist');
+      this.reasonForRejection();
   });
 }
+reasonForRejection(): void {
+  this.purchaserequest.ReasonForRejection = 'Manager Discretion';
+  this.PurchaseRequestSvc.Change(this.purchaserequest)
+  .subscribe(res => {
+    console.log(res);
+    this.router.navigateByUrl('/purchaserequests/reviewlist');
+  });
+}
+
+
 
  approve(): void {
    this.purchaserequest.Status = 'APPROVED';

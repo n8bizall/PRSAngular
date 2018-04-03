@@ -1,8 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { AlertComponent } from './Support/alert/alert.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './Support/_gaurds/auth.gaurd';
+import { JwtInterceptor } from './Support/_helpers/jwt.interceptor';
+import { AlertService } from './services/alert.service';
+
 
 
 import { AppComponent } from './app.component';
@@ -45,6 +52,9 @@ import { PrliListComponent } from './lineitems/prli-list/prli-list.component';
 import { PurchaseRequestEditLinesComponent } from './purchaserequests/purchaserequest-editlines/purchaserequest-editlines.component';
 import { PurchaserequestReviewlistComponent } from './purchaserequests/purchaserequest-reviewlist/purchaserequest-reviewlist.component';
 import { PurchaserequestReviewactionComponent } from './purchaserequests/purchaserequest-reviewaction/purchaserequest-reviewaction.component';
+import { AuthenticationService } from './services/authentification.service';
+
+
 
 
 @NgModule({
@@ -76,7 +86,10 @@ import { PurchaserequestReviewactionComponent } from './purchaserequests/purchas
     PrliListComponent,
     PurchaseRequestEditLinesComponent,
     PurchaserequestReviewlistComponent,
-    PurchaserequestReviewactionComponent
+    PurchaserequestReviewactionComponent,
+    AlertComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +97,12 @@ import { PurchaserequestReviewactionComponent } from './purchaserequests/purchas
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [UserService, VendorService, ProductService, PurchaseRequestService, PurchaseRequestLineItemService],
+  providers: [AuthGuard,   AlertService,
+    AuthenticationService, UserService, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+  }, VendorService, ProductService, PurchaseRequestService, PurchaseRequestLineItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

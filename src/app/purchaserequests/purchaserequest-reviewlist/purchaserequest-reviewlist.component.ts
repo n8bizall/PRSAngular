@@ -22,7 +22,7 @@ export class PurchaserequestReviewlistComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.PurchaseRequestSvc.ReviewList(this.purchaserequest)
+      this.PurchaseRequestSvc.ReviewList()
       .subscribe(purchaserequests => {
         console.log(purchaserequests);
         this.purchaserequests = purchaserequests;   /*get the data and store in property of the componenet*/

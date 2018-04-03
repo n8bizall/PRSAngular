@@ -13,7 +13,12 @@
       <tr><th>Active</th><td>{{purchaserequest.Active ? 'Yes' : ''}}</td></tr>
       <tr><th>ReasonForRejection</th><td>{{purchaserequest.ReasonForRejection}}</td></tr>
   </table>
-  <a (click)='approve()' routerLink='/purchaserequests/reviewlist' class='btn btn-warning'>Approve</a> |
-  <a (click)='reject()' routerLink='/purchaserequests/reviewlist' class='btn btn-danger'>Reject</a>
-  </div>
+  <a (click)='approve()' class="btn btn-sm btn-outline-info">Approve</a> |
+  <a (click)='reject()' ng-click="reasonForRejection()" class='btn btn-sm btn-outline-danger'>Reject</a>
+  <p></p>
+  <div ng-show="openTextBox == true" >
+      <input id='textbox' placeholder= 'Reason For Rejection' type="text"/>
+    </div>  
+
+</div>
   </div>

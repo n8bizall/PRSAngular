@@ -1,9 +1,10 @@
 a {
     color: white;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 10px 15px;
     font-family: Tahoma;
   }
   a:hover {
-    background-color: black;
+    background-color: #8CF4FF;
+    -webkit-text-fill-color: #51647A;
   }

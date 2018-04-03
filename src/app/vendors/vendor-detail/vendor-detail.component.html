@@ -1,5 +1,5 @@
 <div id ='component'>
-    <div id ='pagetitle'>vendor
+    <div id ='pagetitle'>
       <span>{{pagetitle}}</span>
     </div>
     <div id='content' *ngIf='vendor'>
@@ -15,7 +15,7 @@
       <tr><th>IsPreApproved</th><td>{{vendor.IsPreApproved ? 'Yes' : ''}}</td></tr>
       <tr><th>Active</th><td>{{vendor.Active ? 'Yes' : ''}}</td></tr>
   </table>
-  <a routerLink='/vendors/edit/{{vendor.Id}}' class='btn btn-warning'>Edit</a> |
-  <button (click)='remove()' class='btn btn-danger'>Delete</button>
+  <a routerLink='/vendors/edit/{{vendor.Id}}' class="btn btn-sm btn-outline-info">Edit</a> |
+  <button (click)='remove()' class="btn btn-sm btn-outline-danger">Delete</button>
   </div>
   </div>

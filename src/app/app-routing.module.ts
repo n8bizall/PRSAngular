@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './Support/home/home.component';
 import { AboutComponent } from './Support/about/about.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './Support/_gaurds/auth.gaurd';
 
 import { UserListComponent } from './users/user-list/user-list.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
@@ -37,43 +40,74 @@ import { PrliListComponent } from './lineitems/prli-list/prli-list.component';
 
 
 
-
-
-
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path: 'users/detail/:id', component: UserDetailComponent},
-  {path: 'vendors/detail/:id', component: VendorDetailComponent},
-  {path: 'products/detail/:id', component: ProductDetailComponent},
-  {path: 'purchaserequests/detail/:id', component: PurchaserequestDetailComponent},
-  {path: 'purchaserequestlineitems/detail/:rid/:id', component: PrliDetailComponent},
+  { path: '', component: HomeComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }}},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['admin'], redirectTo: 'login' }}},
 
-  {path: 'users/edit/:id', component: UserEditComponent},
-  {path: 'vendors/edit/:id', component: VendorEditComponent},
-  {path: 'products/edit/:id', component: ProductEditComponent},
-  {path: 'purchaserequestlineitems/edit/:rid/:id', component: PrliEditComponent},
-  {path: 'purchaserequests/edit/:id', component: PurchaserequestEditComponent},
+  // otherwise redirect to home
 
-  {path: 'users/list', component: UserListComponent},
-  {path: 'vendors/list', component: VendorListComponent},
-  {path: 'products/list', component: ProductListComponent},
-  {path: 'purchaserequests/list', component: PurchaserequestListComponent},
-  {path: 'purchaserequestlineitems/list/:id', component: PrliListComponent},
-  {path: 'purchaserequests/editlines/:id', component: PurchaseRequestEditLinesComponent },
+  {path: 'users/detail/:id', component: UserDetailComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['review', 'admin'], redirectTo: 'login' }}},
+  {path: 'vendors/detail/:id', component: VendorDetailComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['review', 'admin'], redirectTo: 'login' }} },
+  {path: 'products/detail/:id', component: ProductDetailComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['review', 'admin'], redirectTo: 'login' }}},
+  {path: 'purchaserequests/detail/:id', component: PurchaserequestDetailComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['review', 'admin'], redirectTo: 'login' }}},
+  {path: 'purchaserequestlineitems/detail/:rid/:id', component: PrliDetailComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['review', 'admin'], redirectTo: 'login' }}},
 
-  {path: 'vendors/create', component: VendorCreateComponent},
-  {path: 'users/create', component: UserCreateComponent},
-  {path: 'products/create', component: ProductCreateComponent},
-  {path: 'purchaserequests/create', component: PurchaserequestCreateComponent},
-  {path: 'purchaserequestlineitems/create/:id', component: PrliCreateComponent},
+  {path: 'users/edit/:id', component: UserEditComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }}},
+  {path: 'vendors/edit/:id', component: VendorEditComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }}},
+  {path: 'products/edit/:id', component: ProductEditComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }} },
+  {path: 'purchaserequestlineitems/edit/:rid/:id', component: PrliEditComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }} },
+  {path: 'purchaserequests/edit/:id', component: PurchaserequestEditComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' } }},
 
-  {path: 'purchaserequests/reviewlist', component: PurchaserequestReviewlistComponent},
-  {path: 'purchaserequests/reviewaction/:id', component: PurchaserequestReviewactionComponent},
+  {path: 'users/list', component: UserListComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }}},
+  {path: 'vendors/list', component: VendorListComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }} },
+  {path: 'products/list', component: ProductListComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' } }},
+  {path: 'purchaserequests/list', component: PurchaserequestListComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }} },
+  {path: 'purchaserequestlineitems/list/:id', component: PrliListComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' } }},
+  {path: 'purchaserequests/editlines/:id', component: PurchaseRequestEditLinesComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' } } },
+
+  {path: 'vendors/create', component: VendorCreateComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' } }},
+  {path: 'users/create', component: UserCreateComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['admin'], redirectTo: 'login' }}},
+  {path: 'products/create', component: ProductCreateComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }}},
+  {path: 'purchaserequests/create', component: PurchaserequestCreateComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }}},
+  {path: 'purchaserequestlineitems/create/:id', component: PrliCreateComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' } }},
+
+  {path: 'purchaserequests/reviewlist', component: PurchaserequestReviewlistComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: [ 'review', 'admin'], redirectTo: 'login' }}},
+  {path: 'purchaserequests/reviewaction/:id', component: PurchaserequestReviewactionComponent, canActivate: [AuthGuard] ,
+   data: { permission: {  only: ['review', 'admin'], redirectTo: 'login' }}},
 
 
-  {path: 'home', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
-  {path: '**', component: HomeComponent }
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuard],  data: { permission: {
+    only: ['user', 'review', 'admin'] }}},
+  {path: 'about', component: AboutComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }}},
+  {path: '**', component: HomeComponent, canActivate: [AuthGuard] ,  data: { permission: {
+    only: ['user', 'review', 'admin'], redirectTo: 'login' }}},
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

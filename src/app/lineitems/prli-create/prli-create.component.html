@@ -3,14 +3,14 @@
       <span>{{pagetitle}}</span> 
     </div>
     <div id='content' *ngIf='prli'>
-    <div>
+          <div>
     <div class='form-group row'>
-   <div class='col-sm-6 select-list'>
         <label class='col-form-label col-sm-2' for='product'>Product:</label>
+        <div class='col-sm-6 select-list'>
         <select [(ngModel)]='prli.ProductId' [compareWith]='compareFn' class='form-control' name='Product' id='prli-Product'>
         <option *ngFor="let product of products" [ngValue]="product.Id" [selected]="product.Id == prli.productId">{{product.Name}}</option>
         </select>
-   </div></div>
+   </div></div></div>
     <div class='form-group row'>
         <label class='col-form-label col-sm-2' for='quantity'>Quantity:</label>
         <input [(ngModel)]='prli.Quantity' name='Quantity' type='text' class ='form-control col-sm-6' id='quantity' 
@@ -30,8 +30,7 @@
         <small id='UpdatedByUserHelp' class='form-text text-muted col-sm-2'>UpdatedByUser</small>
   </div>
    <div>
-         <button (click)='create()' class='btn btn-warning'>Create</button>
-   </div>
+         <button (click)='create()' class="btn btn-sm btn-outline-info">Create</button>
    </div>
    </div>
    </div>

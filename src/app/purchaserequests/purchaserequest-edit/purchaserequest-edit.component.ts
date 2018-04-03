@@ -14,7 +14,7 @@ import { UserService } from '../../services/user.service';
 })
 export class PurchaserequestEditComponent implements OnInit {
 
-  pagetitle = 'Purchase Request Line Item Update';
+  pagetitle = 'Purchase Request Line Item Edit';
   purchaserequest: PurchaseRequest;
   users: User[];
 

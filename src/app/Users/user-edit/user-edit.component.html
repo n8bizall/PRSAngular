@@ -2,6 +2,7 @@
 <div id ='pagetitle'>
    <span>{{pagetitle}}</span>
 </div>
+<p></p>
 <div id='content' *ngIf='user'>
 <div class='form-group row'>
    <label class='col-form-label col-sm-2' for='username'>User name:</label>
@@ -58,7 +59,7 @@
    <small id='ActiveHelp' class='form-text text-muted col-sm-2'>Active</small>
 </div>
 <div>
-   <button (click)='change()' class='btn btn-warning'>Update</button>
+   <button (click)='change()' class="btn btn-sm btn-outline-info">Update</button>
 </div>
 </div>
 </div>
