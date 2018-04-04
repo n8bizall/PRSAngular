@@ -37,8 +37,7 @@ export class PurchaserequestCreateComponent implements OnInit {
     this.PurchaseRequestSvc.Create(this.purchaserequest)
     .subscribe(res => {
       console.log(res);
-      this.purchaserequest.Id = this.purchaserequestId;
-      this.router.navigateByUrl('/purchaserequests/editlines/' + this.purchaserequestId);
+      this.router.navigateByUrl('/purchaserequests/editlines/' + res.Data.Id);
   });
 }
  ngOnInit() {

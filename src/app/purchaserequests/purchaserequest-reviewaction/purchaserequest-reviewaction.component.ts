@@ -33,7 +33,7 @@ purchaserequest: PurchaseRequest;
   });
 }
 reasonForRejection(): void {
-  this.purchaserequest.ReasonForRejection = 'Manager Discretion';
+
   this.PurchaseRequestSvc.Change(this.purchaserequest)
   .subscribe(res => {
     console.log(res);

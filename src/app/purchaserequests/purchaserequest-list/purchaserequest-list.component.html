@@ -3,16 +3,13 @@
       <span>{{pagetitle}}</span>  |  <a routerLink='/purchaserequests/create/' >Create New</a>
     </div>
     <div id='content'>
-      <table class='table table-sm'>
+      <table class='table table-sm' class="table table-striped">
         <thead>
           <tr>
             <th>User</th>
             <th>Description</th>
-            <th>DeliveryMode</th>
             <th>Status</th>
             <th>Total</th>
-            <th>Active</th>
-            <th>ReasonForRejection</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -20,11 +17,8 @@
     <tr *ngFor='let purchaserequest of purchaserequests'>
       <td>{{purchaserequest.User.FirstName}} {{purchaserequest.User.LastName}}</td>
       <td>{{purchaserequest.Description}}</td>
-      <td>{{purchaserequest.DeliveryMode}}</td>
       <td>{{purchaserequest.Status}}</td>
       <td>{{purchaserequest.Total | currency}}</td>
-      <td>{{purchaserequest.Active}}</td>
-      <td>{{purchaserequest.ReasonForRejection}}</td>
       <td>
         <a routerLink='/purchaserequests/detail/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-info">Detail</a> |
         <a routerLink='/purchaserequests/edit/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-info">Edit</a>  |

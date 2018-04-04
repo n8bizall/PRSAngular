@@ -4,7 +4,7 @@
       <a *ngIf="purchaserequest" routerLink="/purchaserequestlineitems/create/{{purchaserequest.Id}}">Create New Line Items</a>
     </div>
     <div id="content" *ngIf='purchaserequest'>
-      <table class="table table-sm">
+      <table class="table table-sm" >
         <tr>
           <th>Id</th>
           <th>User</th>
@@ -25,14 +25,13 @@
         </tr>
       </table>
       <hr />
-      <table class="table table-sm">
+      <table class="table table-sm" class="table table-striped">
         <tr>
           <th>Id</th>
           <th>Product</th>
           <th>Quantity</th>
           <th>Price</th>
           <th>Subtotal</th>
-          <th>Action</th>
         </tr>
         <tr *ngFor="let prli of purchaserequest.prliList">
           <td>{{ prli.Id }}</td>
@@ -40,13 +39,10 @@
           <td>{{ prli.Quantity }}</td>
           <td>{{ prli.Product.Price | currency }}</td>
           <td>{{ (prli.Quantity * prli.Product.Price) | currency }}</td>
-          <td>
-              <a class="btn btn-sm btn-outline-info" routerLink="/purchaserequestlineitems/detail/{{this.purchaserequest.Id}}/{{prli.Id}}">Detail</a> |
-              <a class="btn btn-sm btn-outline-info" routerLink="/purchaserequestlineitems/edit/{{this.purchaserequest.Id}}/{{prli.Id}}">Edit</a> 
-            
-          </td>
-        </tr>
+         </tr>
       </table>
     </div>
-    <a (click)='submit()' class="btn btn-block btn-outline-info" >Submit</a>
+    <div style="text-align: center;">
+    <a (click)='submit()' class="btn btn-block btn-outline-info" >Submit for Review</a>
+    </div>
   </div>

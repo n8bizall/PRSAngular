@@ -3,7 +3,7 @@
       <span>{{pagetitle}}</span> 
     </div>
     <div id='content' *ngIf='purchaserequests' class='listdiv'>
-      <table class='table table-sm'>
+      <table class='table table-sm' class="table table-striped">
         <thead>
           <tr>
             <th>User</th>
@@ -15,8 +15,8 @@
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
-    <tr *ngFor='let purchaserequest of purchaserequests'>
+        <tbody >
+    <tr *ngFor='let purchaserequest of purchaserequests' class='listdiv'>
       <td>{{purchaserequest.User.FirstName}} {{purchaserequest.User.LastName}}</td>
       <td>{{purchaserequest.Description}}</td>
       <td>{{purchaserequest.DeliveryMode}}</td>

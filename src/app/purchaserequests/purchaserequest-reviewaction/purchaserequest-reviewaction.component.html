@@ -1,24 +1,52 @@
-<div id ='component'>
-    <div id ='pagetitle'>
-      <span>{{pagetitle}}</span>
+  <div id="component">
+    <div id="pagetitle">
+      <span>{{ pagetitle }}</span> 
     </div>
-    <div id='content' *ngIf='purchaserequest'>
-  <table class= 'table table-sm' >
-      <tr><th>User's Name</th><td>{{purchaserequest.User.FirstName}} {{purchaserequest.User.LastName}}</td></tr>
-      <tr> <th>Description</th><td>{{purchaserequest.Description}}</td></tr>
-      <tr><th>Justification</th><td>{{purchaserequest.Justification}}</td></tr>
-      <tr><th>DeliveryMode</th><td>{{purchaserequest.DeliveryMode}}</td></tr>
-      <tr><th>Status</th><td>{{purchaserequest.Status}}</td></tr>
-      <tr><th>Total</th><td>{{purchaserequest.Total}}</td></tr>
-      <tr><th>Active</th><td>{{purchaserequest.Active ? 'Yes' : ''}}</td></tr>
-      <tr><th>ReasonForRejection</th><td>{{purchaserequest.ReasonForRejection}}</td></tr>
-  </table>
-  <a (click)='approve()' class="btn btn-sm btn-outline-info">Approve</a> |
-  <a (click)='reject()' ng-click="reasonForRejection()" class='btn btn-sm btn-outline-danger'>Reject</a>
-  <p></p>
-  <div ng-show="openTextBox == true" >
-      <input id='textbox' placeholder= 'Reason For Rejection' type="text"/>
-    </div>  
-
-</div>
-  </div>
+    <div id="content" *ngIf='purchaserequest'>
+      <table class="table table-sm" class="table table-striped">
+        <tr>
+          <th>Id</th>
+          <th>User</th>
+          <th>Description</th>
+          <th>Justification</th>
+          <th>Status</th>
+          <th>Total</th>
+          
+        </tr>
+        <tr>
+          <td>{{purchaserequest.Id}}</td>
+          <td>{{purchaserequest.User.FirstName}}{{purchaserequest.User.LastName}}</td>
+          <td>{{purchaserequest.Description }}</td>
+          <td>{{purchaserequest.Justification}}</td>
+          <td>{{purchaserequest.Status}}</td>
+          <td>{{purchaserequest.Total | currency}}</td>
+          
+        </tr>
+      </table>
+      <hr />
+      <table class="table table-sm">
+        <tr>
+          <th>Id</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+        </tr>
+        <tr *ngFor="let prli of purchaserequest.prliList">
+          <td>{{ prli.Id }}</td>
+          <td>{{ prli.Product.Name }}</td>
+          <td>{{ prli.Quantity }}</td>
+          <td>{{ prli.Product.Price | currency }}</td>
+          <td>{{ (prli.Quantity * prli.Product.Price) | currency }}</td>
+        </tr>
+      </table>
+    </div>
+    <div style="text-align: center;">
+    <a (click)='approve()' class="btn btn-sm btn-outline-info">Approve</a> |
+    <a (click)='reject()' ng-click="reasonForRejection()" class='btn btn-sm btn-outline-danger'>Reject</a>
+    
+    <p></p>
+    <div ng-show="openTextBox == true" >
+        <input [(ngModel)]='purchaserequest.ReasonForRejection' id='textbox' placeholder= 'Reason For Rejection' type="text"/>
+      </div></div> 
+  </div> 

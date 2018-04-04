@@ -10,7 +10,7 @@ import { PurchaseRequest } from '../../models/purchaserequest';
 export class PurchaserequestReviewlistComponent implements OnInit {
   pagetitle = 'Requests in Review List';
   purchaserequests: PurchaseRequest[];
-  purchaserequest: PurchaseRequest;
+
 
     constructor(
       private PurchaseRequestSvc: PurchaseRequestService

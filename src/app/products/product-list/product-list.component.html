@@ -2,8 +2,8 @@
   <div id ='pagetitle'>
     <span>{{pagetitle}}</span>  |  <a routerLink='/products/create'>Create New</a>
   </div>
-  <div id='content'>
-    <table class='table table-sm'>
+  <div id='content' class='listdiv'>
+    <table class='table table-sm' class="table table-striped">
       <thead>
         <tr>
           <th>Id</th>
@@ -12,7 +12,6 @@
           <th>Name</th>
           <th>Price</th>
           <th>Unit</th>
-          <th>PhotoPath</th>
           <th>Active</th>
           <th>Actions</th>
         </tr>
@@ -25,7 +24,6 @@
     <td>{{product.Name}}</td>
     <td>{{product.Price | currency }}</td>
     <td>{{product.Unit}}</td>
-    <td>{{product.PhotoPath}}</td>
     <td>{{product.Active}}</td>
     <td>
       <a routerLink='/products/detail/{{product.Id}}' class="btn btn-sm btn-outline-info">Detail</a> |
