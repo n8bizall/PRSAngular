@@ -1,4 +1,4 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.6vw'>
   <div id ='pagetitle'>
     <span>{{pagetitle}}</span>  |  <a routerLink='/products/create'>Create New</a>
   </div>
@@ -12,7 +12,6 @@
           <th>Name</th>
           <th>Price</th>
           <th>Unit</th>
-          <th>Active</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -24,10 +23,11 @@
     <td>{{product.Name}}</td>
     <td>{{product.Price | currency }}</td>
     <td>{{product.Unit}}</td>
-    <td>{{product.Active}}</td>
     <td>
-      <a routerLink='/products/detail/{{product.Id}}' class="btn btn-sm btn-outline-info">Detail</a> |
-      <a routerLink='/products/edit/{{product.Id}}' class="btn btn-sm btn-outline-info">Edit</a>  
+      <div class='btn-group'>
+      <a routerLink='/products/detail/{{product.Id}}' class="btn btn-sm btn-outline-primary">Detail</a> 
+      <a routerLink='/products/edit/{{product.Id}}' class="btn btn-sm btn-outline-success">Edit</a>  
+      </div>
     </td>
   </tr>
       </tbody>

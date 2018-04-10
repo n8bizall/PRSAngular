@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { JwtInterceptor } from '../Support/_helpers/jwt.interceptor';
+
 
 const url = 'http://localhost:61566/users/';
 
@@ -15,12 +17,13 @@ export class AuthenticationService {
             .map(user => {
                 // login successful if there's a jwt token in the response
                 console.log(user);
-                if (user ) {
+                if (user && user.Active ) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
+                    return user;
                 }
 
-                return user;
+                return null;
             });
     }
 

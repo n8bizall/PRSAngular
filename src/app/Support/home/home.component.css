@@ -6,3 +6,8 @@ a {
     #51647A;
 
 }
+
+.homebackground {
+    background-image: url('../Picture1.jpg');
+    background-color: red;
+}

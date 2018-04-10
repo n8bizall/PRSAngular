@@ -1,4 +1,4 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.6vw'>
     <div id ='pagetitle'>
        <span>{{pagetitle}}</span>
     </div>
@@ -21,33 +21,15 @@
         aria-describedby='DeliveryModeHelp' placeholder='DeliveryMode'>
        <small id='DeliveryModeHelp' class='form-text text-muted col-sm-2'>The delivery mode</small>
     </div>    
-    <div>
+    <div>        
     <div class='form-group row'>
-       <label class='col-form-label col-sm-2' for='purchaserequeststatus'>Status:</label>
-       <input [(ngModel)]='purchaserequest.Status' name='Status' type='text' class ='form-control col-sm-6' id='purchaserequeststatus' 
-        aria-describedby='StatusHelp' placeholder='Status'>
-       <small id='StatusHelp' class='form-text text-muted col-sm-2'>The status</small>
-   </div>         
-    <div class='form-group row'>
-       <label class='col-form-label col-sm-2' for='purchaserequesttotal'>Total:</label>
-       <input [(ngModel)]='purchaserequest.Total' name='Total' type='text' class ='form-control col-sm-6' id='purchaserequesttotal' 
-        aria-describedby='TotalHelp' placeholder='Total'>
-       <small id='TotalHelp' class='form-text text-muted col-sm-2'>Total</small>
-    </div>
-    <div class='form-group row'>
-       <label class='col-form-label col-sm-2' for='purchaserequestactive'>Active:</label>
-       <input [(ngModel)]='purchaserequest.Active' name='Active' type='checkbox' class ='form-control col-sm-6' id='purchaserequestactive' 
-        aria-describedby='ActiveHelp' placeholder='Active'>
-       <small id='ActiveHelp' class='form-text text-muted col-sm-2'>Active</small>
-    </div>
-    <div class='form-group row'>
-        <label class='col-form-label col-sm-2' for='purchaserequestreasonforrejection'>ReasonForRejection:</label>
+        <label class='col-form-label col-sm-2' for='purchaserequestreasonforrejection'>Rejection:</label>
         <input [(ngModel)]='purchaserequest.ReasonForRejection' name='ReasonForRejection' type='text' class ='form-control col-sm-6' id='purchaserequestreasonforrejection' 
          aria-describedby='ReasonForRejectionHelp' placeholder='ReasonForRejection'>
         <small id='ReasonForRejectionHelp' class='form-text text-muted col-sm-2'>ReasonForRejection</small>
      </div>
      <div>
-        <button (click)='change()' class="btn btn-sm btn-outline-info">Update</button>
+        <button (click)='change()' class="btn btn-sm btn-outline-success ">Update</button>
      </div>
      </div>
      </div>

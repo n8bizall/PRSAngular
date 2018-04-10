@@ -12,7 +12,7 @@ export class UserService {
   List(): Observable<User[]> {
     return this.http.get( url +  'List' ) as Observable<User[]>;
   }
-  Get(Id: string): Observable<User> {
+  Get(Id: number): Observable<User> {
     return this.http.get(url + 'Get/' + Id) as Observable<User>;
   }
   Create(user: User): Observable<any> {

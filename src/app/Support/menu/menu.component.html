@@ -3,5 +3,6 @@
     <li *ngFor="let menu of menuItems">
       <app-menu-item [menuItem]="menu"></app-menu-item>
     </li>
-  </ul>
+  </ul> 
+  <button class="btn btn-outline-default my-2 my-sm-0"  [routerLink]="['/login']">Log Out</button>
 </nav>

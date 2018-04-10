@@ -1,4 +1,4 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.6vw'>
     <div id ='pagetitle'>
       <span>{{pagetitle}}</span> 
     </div>
@@ -11,7 +11,6 @@
             <th>DeliveryMode</th>
             <th>Status</th>
             <th>Total</th>
-            <th>Active</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -22,9 +21,8 @@
       <td>{{purchaserequest.DeliveryMode}}</td>
       <td>{{purchaserequest.Status}}</td>
       <td>{{purchaserequest.Total | currency}}</td>
-      <td>{{purchaserequest.Active}}</td>
       <td>
-        <a routerLink='/purchaserequests/reviewaction/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-info">Review</a> 
+        <a routerLink='/purchaserequests/reviewaction/{{purchaserequest.Id}}' class="btn btn-md btn-outline-primary">REVIEW</a> 
       </td>
     </tr>
         </tbody>

@@ -1,4 +1,4 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.6vw'>
     <div id ='pagetitle'>
       <span>{{pagetitle}}</span>
     </div>
@@ -9,11 +9,13 @@
       <tr><th>Justification</th><td>{{purchaserequest.Justification}}</td></tr>
       <tr><th>DeliveryMode</th><td>{{purchaserequest.DeliveryMode}}</td></tr>
       <tr><th>Status</th><td>{{purchaserequest.Status}}</td></tr>
-      <tr><th>Total</th><td>{{purchaserequest.Total}}</td></tr>
+      <tr><th>Total</th><td>{{purchaserequest.Total | currency }}</td></tr>
       <tr><th>Active</th><td>{{purchaserequest.Active ? 'Yes' : ''}}</td></tr>
       <tr><th>ReasonForRejection</th><td>{{purchaserequest.ReasonForRejection}}</td></tr>
   </table>
-  <a routerLink='/purchaserequests/edit/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-info">Edit</a> |
-  <button (click)='remove()' class='btn btn-sm btn-outline-danger'>Delete</button>
+  <div style="text-align: center;">
+  <a routerLink='/purchaserequests/edit/{{purchaserequest.Id}}' class="btn btn-md btn-outline-success">Edit</a> |
+  <button (click)='remove()' class='btn btn-md btn-outline-danger'>Delete</button>
+  </div>
   </div>
   </div>

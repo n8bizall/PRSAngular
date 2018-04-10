@@ -1,16 +1,9 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.6vw'>
     <div id ='pagetitle'>
        <span>{{pagetitle}}</span>
     </div>
     <div id='content' *ngIf='users'>
-    <div>
-    <div class='form-group row' >
-       <label class='col-form-label col-sm-2' for="purchaserequestuser">User:</label>
-       <div class='col-sm-6 select-list'>
-       <select [(ngModel)]='purchaserequest.UserId' [compareWith]='compareFn' class='form-control' name='User' id='purchaserequest-User'>
-       <option *ngFor="let user of users" [ngValue]="user.Id" [selected]="user.Id == purchaserequest.UserId">{{user.FirstName + user.LastName}}</option>
-       </select>
-    </div></div></div>
+   
     <div class='form-group row'>
        <label class='col-form-label col-sm-2' for='description'>Description:</label>
        <input [(ngModel)]='purchaserequest.Description' name='Description' type='text' class ='form-control col-sm-6' id='description' 
@@ -26,17 +19,12 @@
     <div class='form-group row'>
        <label class='col-form-label col-sm-2' for='purchaserequestdeliverymode'>DeliveryMode:</label>
        <input [(ngModel)]='purchaserequest.DeliveryMode' name='DeliveryMode' type='text' class ='form-control col-sm-6' id='purchaserequestdeliverymode' 
-        aria-describedby='DeliveryModeHelp' placeholder='DeliveryMode'>
+        aria-describedby='DeliveryModeHelp' placeholder='USPS'>
        <small id='DeliveryModeHelp' class='form-text text-muted col-sm-2'>The delivery mode</small>
     </div>            
-    <div class='form-group row'>
-       <label class='col-form-label col-sm-2' for='purchaserequestactive'>Active:</label>
-       <input [(ngModel)]='purchaserequest.Active' name='Active' type='checkbox' class ='form-control col-sm-6' id='purchaserequestactive' 
-        aria-describedby='ActiveHelp' placeholder='Active'>
-       <small id='ActiveHelp' class='form-text text-muted col-sm-2'>Active</small>
-    </div>
+
      <div>
-        <button (click)='create()' class="btn btn-sm btn-outline-info">Create</button>
+        <button (click)='create()' class="btn btn-lg btn-outline-success">Create</button>
   </div>
   </div>
   </div>

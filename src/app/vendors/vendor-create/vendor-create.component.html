@@ -1,14 +1,8 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.5vw'>
     <div id ='pagetitle'>
       <span>{{pagetitle}}</span> 
     </div>
     <div id='content' *ngIf='vendor'>
-    <div class='form-group row'>
-         <label class='col-form-label col-sm-2' for='vendorcode'>Code:</label>
-         <input [(ngModel)]='vendor.Code' name='Code' type='text' class ='form-control col-sm-6' id='vendor' 
-          aria-describedby='CodeHelp' placeholder='Code'>
-         <small id='CodeHelp' class='form-text text-muted col-sm-2'>The vendor code</small>
-    </div>
     <div class='form-group row'>
          <label class='col-form-label col-sm-2' for='vendorname'>Name:</label>
          <input [(ngModel)]='vendor.Name' name='Name' type='text' class ='form-control col-sm-6' id='name' 
@@ -70,7 +64,7 @@
             <small id='UpdatedByUserHelp' class='form-text text-muted col-sm-2'>Updated by user</small>
    </div> 
    <div>
-         <button (click)='create()' class="btn btn-sm btn-outline-info">Create</button>
+         <button (click)='create()' class="btn btn-sm btn-outline-primary">Create</button>
    </div>
    </div>
    </div>

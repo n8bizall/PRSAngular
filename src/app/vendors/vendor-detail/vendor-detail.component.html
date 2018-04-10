@@ -1,4 +1,4 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.6vw'>
     <div id ='pagetitle'>
       <span>{{pagetitle}}</span>
     </div>
@@ -15,7 +15,9 @@
       <tr><th>IsPreApproved</th><td>{{vendor.IsPreApproved ? 'Yes' : ''}}</td></tr>
       <tr><th>Active</th><td>{{vendor.Active ? 'Yes' : ''}}</td></tr>
   </table>
-  <a routerLink='/vendors/edit/{{vendor.Id}}' class="btn btn-sm btn-outline-info">Edit</a> |
-  <button (click)='remove()' class="btn btn-sm btn-outline-danger">Delete</button>
+  <div style="text-align: center;">
+  <a routerLink='/vendors/edit/{{vendor.Id}}' class="btn btn-md btn-outline-success">Edit</a> |
+  <button (click)='remove()' class="btn btn-md btn-outline-danger">Delete</button>
+  </div>
   </div>
   </div>

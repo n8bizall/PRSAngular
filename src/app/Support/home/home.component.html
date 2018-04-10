@@ -1,11 +1,15 @@
-<div class="col-md-6 col-md-offset-3">
+
+
+    <div class="col-md-6 col-md-offset-3"  style='font-size:1.6vw; background-color:transparent;'>
     <h1>Hi {{currentUser.FirstName}}!</h1>
-    <p>You're logged in with Angular 5!!</p>
-    <h3>All registered users:</h3>
+    <p>You're logged to PRS!!</p>
+    <h3>All registered users of our PRS system:</h3>
     <ul>
         <li *ngFor="let user of users">
             {{user.UserName}} ({{user.FirstName}} {{user.LastName}})
         </li>
     </ul>
+    <p></p>
+    
     <p><a [routerLink]="['/login']">Logout</a></p>
 </div>

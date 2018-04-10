@@ -1,4 +1,4 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.6vw'>
     <div id ='pagetitle'>
       <span>{{pagetitle}}</span>  |  <a routerLink='/purchaserequests/create/' >Create New</a>
     </div>
@@ -20,9 +20,11 @@
       <td>{{purchaserequest.Status}}</td>
       <td>{{purchaserequest.Total | currency}}</td>
       <td>
-        <a routerLink='/purchaserequests/detail/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-info">Detail</a> |
-        <a routerLink='/purchaserequests/edit/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-info">Edit</a>  |
-        <a routerLink='/purchaserequests/editlines/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-info">Lines</a>
+        <div class='btn-group'>
+        <a routerLink='/purchaserequests/detail/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-primary">Detail</a> 
+        <a routerLink='/purchaserequests/edit/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-success">Edit</a>  
+        <a routerLink='/purchaserequests/editlines/{{purchaserequest.Id}}' class="btn btn-sm btn-outline-primary">Lines</a>
+      </div>
       </td>
     </tr>
         </tbody>

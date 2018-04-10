@@ -1,4 +1,4 @@
-<div id="component">
+<div id="component" style='font-size: 1.6vw'>
     <div id="pagetitle">
       <span>{{ pagetitle }}</span> | 
       <a *ngIf="purchaserequest" routerLink="/purchaserequestlineitems/create/{{purchaserequest.Id}}">Create New Line Items</a>
@@ -43,6 +43,6 @@
       </table>
     </div>
     <div style="text-align: center;">
-    <a (click)='submit()' class="btn btn-block btn-outline-info" >Submit for Review</a>
+    <a (click)='submit()' class="btn btn-outline-success" >Submit for Review</a>
     </div>
   </div>

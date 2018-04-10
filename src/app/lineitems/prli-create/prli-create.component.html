@@ -1,4 +1,4 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.6vw'>
     <div id ='pagetitle'>
       <span>{{pagetitle}}</span> 
     </div>
@@ -17,20 +17,8 @@
          aria-describedby='QuantityHelp' placeholder='Quantity'>
         <small id='QuantityHelp' class='form-text text-muted col-sm-2'>The quantity</small>
     </div>
-   <div class='form-group row'>
-         <label class='col-form-label col-sm-2' for='active'>Active:</label>
-         <input [(ngModel)]='prli.Active' name='Active' type='checkbox' class ='form-control col-sm-6' id='active' 
-          aria-describedby='ActiveHelp' placeholder='Active'>
-         <small id='ActiveHelp' class='form-text text-muted col-sm-2'>Active</small>
-   </div>
-   <div class='form-group row'>
-        <label class='col-form-label col-sm-2' for='updatedbyuser'>UpdatedByUser:</label>
-        <input [(ngModel)]='prli.UpdatedByUser' name='UpdatedByUser' type='text' class ='form-control col-sm-6' id='updatedbyuser' 
-         aria-describedby='UpdatedByUserHelp' placeholder='UpdatedByUser'>
-        <small id='UpdatedByUserHelp' class='form-text text-muted col-sm-2'>UpdatedByUser</small>
-  </div>
    <div>
-         <button (click)='create()' class="btn btn-sm btn-outline-info">Create</button>
+         <button (click)='create()' class="btn btn-lg btn-outline-info">Create</button>
    </div>
    </div>
    </div>

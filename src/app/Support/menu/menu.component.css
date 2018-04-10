@@ -13,3 +13,8 @@ nav {
     display: inline-block;
     text-align: center;
   }
+  .loginbtn{
+    position: absolute;
+    top: 5px;
+    right:10px;
+  }

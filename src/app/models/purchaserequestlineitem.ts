@@ -11,7 +11,7 @@ export class PurchaseRequestLineItem {
     Active: boolean;
     DateCreated: string;
     DateUpdated: string;
-    UpdatedByUser: string;
+    UpdatedByUser: number;
     PurchaseRequestId: number;
 
     constructor(
@@ -21,7 +21,7 @@ export class PurchaseRequestLineItem {
         Active: boolean,
         DateCreated: string,
         DateUpdated: string,
-        UpdatedByUser: string,
+    UpdatedByUser: number,
     PurchaseRequestId: number
     ) {
         this.Id = Id;

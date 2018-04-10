@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from './menu';
+import { LoginComponent } from '../../login/login.component';
+import { AuthenticationService } from '../../services/authentification.service';
 
 
 
@@ -17,14 +19,17 @@ export class MenuComponent implements OnInit {
     new Menu('Vendors', '/vendors/list', 'The vendor list display'),
     new Menu('Products', '/products/list', 'The products page'),
     new Menu('Purchase Requests', '/purchaserequests/list', 'The user list display'),
-    new Menu('Review', '/purchaserequests/reviewlist', 'The review list display'),
-    new Menu('Log Out', '/login', 'Log Out Function' ),
+    new Menu('Review', '/purchaserequests/reviewlist', 'The review list display')
+  //  new Menu('Log Out', '/login', 'Log Out Function' ),
 
 
   ];
 
-  constructor() { }
-
+  constructor(private AuthSvc: AuthenticationService) { }
+  LogOut() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentUser');
+}
   ngOnInit() {
   }
 

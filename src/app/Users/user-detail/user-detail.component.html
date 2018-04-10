@@ -1,4 +1,4 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.6vw'>
   <div id ='pagetitle'>
     <span>{{pagetitle}}</span>
   </div>
@@ -13,7 +13,9 @@
     <tr><th>IsAdmin</th><td>{{user.IsAdmin ? 'Yes' : ''}}</td></tr>
     <tr><th>Active</th><td>{{user.Active ? 'Yes' : ''}}</td></tr>
 </table>
-<a routerLink='/users/edit/{{user.Id}}' class="btn btn-sm btn-outline-info">Edit</a> |
-<button (click)='remove()' class="btn btn- sm btn-outline-danger">Delete</button>
+<div style="text-align: center;">
+  <a routerLink='/users/edit/{{user.Id}}' class="btn btn-lg btn-outline-success">Edit</a> |
+<button (click)='remove()' class="btn btn-lg btn-outline-danger">Delete</button>
+</div>
 </div>
 </div>

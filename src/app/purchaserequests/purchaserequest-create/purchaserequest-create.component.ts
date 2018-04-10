@@ -5,6 +5,8 @@ import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 import { PurchaseRequest } from '../../models/purchaserequest';
 import { PurchaseRequestService } from '../../services/purchaserequest.service';
+import { AuthenticationService } from '../../services/authentification.service';
+
 
 
 
@@ -16,7 +18,7 @@ import { PurchaseRequestService } from '../../services/purchaserequest.service';
 export class PurchaserequestCreateComponent implements OnInit {
 
   pagetitle = 'Purchase Request Create';
-  purchaserequest: PurchaseRequest = new PurchaseRequest ( 0, 0, '', '', '', 'NEW', 0, true, '', '', '', '');
+  purchaserequest: PurchaseRequest = new PurchaseRequest ( 0, 0, '', '', '', 'NEW', 0, true, '', '', '', 'USPS');
   users: User[];
   purchaserequestId: number;
   user: User;
@@ -25,7 +27,8 @@ export class PurchaserequestCreateComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private UserSvc: UserService,
-    private PurchaseRequestSvc: PurchaseRequestService
+    private PurchaseRequestSvc: PurchaseRequestService,
+    private authService: AuthenticationService
   ) { }
 
   compareFn(v1: number, v2: number): boolean {
@@ -33,7 +36,8 @@ export class PurchaserequestCreateComponent implements OnInit {
   }
 
 
-  create(): void {
+  create(): void { // need local guy here
+    this.user.Id = this.purchaserequest.UserId;
     this.PurchaseRequestSvc.Create(this.purchaserequest)
     .subscribe(res => {
       console.log(res);
@@ -41,12 +45,12 @@ export class PurchaserequestCreateComponent implements OnInit {
   });
 }
  ngOnInit() {
-   this.UserSvc.List()
-   .subscribe(users => {
-     this.users = users;
-     console.log('Users', this.users);
-   });
-
-
+  this.user = this.authService.GetUser();
+    this.purchaserequest.UserId = this.user.Id;
+    this.UserSvc.List()
+      .subscribe(users => {
+        this.users = users;
+        console.log('Users', this.users);
+      });
   }
 }

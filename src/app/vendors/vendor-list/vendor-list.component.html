@@ -1,4 +1,4 @@
-<div id ='component'>
+<div id ='component' style='font-size: 1.6vw'>
     <div id ='pagetitle'>
       <span>{{pagetitle}}</span>  |  <a routerLink='/vendors/create'>Create New</a>
     </div>
@@ -22,8 +22,10 @@
       <td>{{vendor.Phone}}</td>
       <td>{{vendor.Email}}</td>
       <td>
-    <a routerLink='/vendors/detail/{{vendor.Id}}'class="btn btn-sm btn-outline-info">Detail</a> |
-        <a routerLink='/vendors/edit/{{vendor.Id}}'class="btn btn-sm btn-outline-info">Edit</a>  
+        <div class='btn-group'>
+        <a routerLink='/vendors/detail/{{vendor.Id}}'class="btn btn-sm btn-outline-primary">Detail</a>
+        <a routerLink='/vendors/edit/{{vendor.Id}}'class="btn btn-sm btn-outline-success">Edit</a>  
+        </div>
       </td>
     </tr>
         </tbody>

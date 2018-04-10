@@ -10,6 +10,10 @@ import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 import { HomeComponent } from '../../Support/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { User } from '../../models/user';
+import { UserService } from '../../services/user.service';
+import { AuthenticationService } from '../../services/authentification.service';
+
 
 
 @Component({
@@ -20,13 +24,17 @@ import { HttpClientModule } from '@angular/common/http';
 export class PrliCreateComponent implements OnInit {
 
   pagetitle = 'Line Item Create';
-  prli: PurchaseRequestLineItem = new PurchaseRequestLineItem ('0', '0', '0', true, '', '', '0', 0);
+  prli: PurchaseRequestLineItem = new PurchaseRequestLineItem ('0', '0', '0', true, '', '', 0, 1);
   products: Product[];
   purchaserequests: PurchaseRequest[];
   purchaserequestId: number;
   purchaserequest: PurchaseRequest;
+  user: User;
+  users: User[];
 
   constructor(
+    private authService: AuthenticationService,
+    private UserSvc: UserService,
     private ProductSvc: ProductService,
     private route: ActivatedRoute,
     private router: Router,
@@ -69,6 +77,13 @@ ngOnInit() {
       });
       this.getProductsList();
     });
+    this.user = this.authService.GetUser();
+    this.purchaserequest.UserId = this.user.Id;
+    this.UserSvc.List()
+      .subscribe(users => {
+        this.users = users;
+        console.log('Users', this.users);
+      });
 }
 
 }

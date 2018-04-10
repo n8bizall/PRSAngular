@@ -7,4 +7,5 @@ a {
   a:hover {
     background-color: #8CF4FF;
     -webkit-text-fill-color: #51647A;
+    padding: 18px 15px;
   }
