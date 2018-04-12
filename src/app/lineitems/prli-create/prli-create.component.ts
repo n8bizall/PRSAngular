@@ -24,7 +24,7 @@ import { AuthenticationService } from '../../services/authentification.service';
 export class PrliCreateComponent implements OnInit {
 
   pagetitle = 'Line Item Create';
-  prli: PurchaseRequestLineItem = new PurchaseRequestLineItem ('0', '0', '0', true, '', '', 0, 1);
+  prli: PurchaseRequestLineItem = new PurchaseRequestLineItem ('0', '0', '1', true, '', '', 0, 1);
   products: Product[];
   purchaserequests: PurchaseRequest[];
   purchaserequestId: number;

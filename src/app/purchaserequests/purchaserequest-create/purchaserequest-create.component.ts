@@ -18,7 +18,7 @@ import { AuthenticationService } from '../../services/authentification.service';
 export class PurchaserequestCreateComponent implements OnInit {
 
   pagetitle = 'Purchase Request Create';
-  purchaserequest: PurchaseRequest = new PurchaseRequest ( 0, 0, '', '', '', 'NEW', 0, true, '', '', '', 'USPS');
+  purchaserequest: PurchaseRequest = new PurchaseRequest ( 0, 0, '', '', '', 'NEW', 0, true, '' , '', '', '');
   users: User[];
   purchaserequestId: number;
   user: User;

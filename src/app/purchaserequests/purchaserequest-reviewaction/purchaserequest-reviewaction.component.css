@@ -6,3 +6,10 @@ a {
     #51647A;
 
 }
+a:hover{
+
+    -webkit-text-fill-color: white;
+}
+#textbox {
+    text-align: center;
+}

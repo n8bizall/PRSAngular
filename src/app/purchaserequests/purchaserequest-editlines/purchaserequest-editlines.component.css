@@ -6,3 +6,8 @@ a {
     #51647A;
 
 }
+#submit:hover {
+    color: 
+    #51647A;
+    -webkit-text-fill-color: white;
+}
